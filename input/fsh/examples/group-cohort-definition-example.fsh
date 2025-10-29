@@ -13,6 +13,7 @@ Description: "An example cohort definition using the GroupDefinition profile"
 * characteristic[=].code.text = "Adults 18 years and older"
 * characteristic[=].valueQuantity = 18 'a' "years"
 * characteristic[=].exclude = false
-* characteristic[+].code.text = "Patients conforming to US Core Patient profile"
-* characteristic[=].valueReference.extension[valueCanonical].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
+* characteristic[+].code = http://loinc.org#4548-4 "Hemoglobin A1c/Hemoglobin.total in Blood"
+* characteristic[=].code.text = "Patients with high HbA1c (>6%)"
+* characteristic[=].valueReference.extension[valueCanonical].valueCanonical = "http://example.org/fhir/StructureDefinition/high-a1c-observation"
 * characteristic[=].exclude = false
