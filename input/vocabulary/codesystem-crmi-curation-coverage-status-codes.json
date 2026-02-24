@@ -28,12 +28,12 @@
     {
       "code": "complete",
       "display": "Complete clinical coverage",
-      "definition": "All codes considered relevant to the intended clinical scope of this value set have been proactively identified, reviewed, and curated by the steward. No known gaps or missing component groupings remain."
+      "definition": "All concept codes considered relevant to the intended scope of this value set have been proactively identified, reviewed, and curated by the steward. No known gaps or missing component groupings remain."
     },
     {
       "code": "partial",
       "display": "Partial clinical coverage",
-      "definition": "The value set has not yet been fully curated for the intended clinical scope. Relevant codes or component groupings may be missing, unreviewed, or not yet incorporated, including cases where expected referenced value sets have not yet been included."
+      "definition": "The value set has not yet been fully curated for the intended scope. Relevant concept codes or component groupings may be missing, or not yet incorporated, including cases where expected referenced value sets have not yet been included."
     }
   ]
 }
