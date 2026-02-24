@@ -9,22 +9,22 @@
   "description": "Example condition grouper for diabetes-related diagnoses.",
   "extension": [
     {
-      "url": "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-curationCoverage",
+      "url": "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-curationCoverageLevel",
       "extension": [
         {
-          "url": "status",
+          "url": "level",
           "valueCodeableConcept": {
             "coding": [
               {
-                "system": "http://hl7.org/fhir/uv/crmi/CodeSystem/CurationCoverageStatus",
+                "system": "http://hl7.org/fhir/uv/crmi/CodeSystem/CurationCoverageLevelCodes",
                 "code": "partial",
-                "display": "Incomplete clinical coverage"
+                "display": "Partial coverage"
               }
             ]
           }
         },
         {
-          "url": "statusReason",
+          "url": "levelReason",
           "valueMarkdown": "Medication and laboratory additional-context groupers have not yet been curated or incorporated."
         },
         {

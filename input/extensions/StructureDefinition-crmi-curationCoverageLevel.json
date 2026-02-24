@@ -1,15 +1,15 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "crmi-curationCoverage",
-  "url": "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-curationCoverage",
+  "id": "crmi-curationCoverageLevel",
+  "url": "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-curationCoverageLevel",
   "version": "1.0.0",
-  "name": "CrmiCurationCoverage",
-  "title": "CRMI Curation Coverage",
+  "name": "CrmiCurationCoverageLevel",
+  "title": "CRMI Curation Coverage Level",
   "status": "active",
   "experimental": false,
   "date": "2026-02-11",
   "publisher": "HL7 Clinical Reasoning Management Infrastructure (CRMI)",
-  "description": "Indicates the relative completeness and clinical curation coverage of the codes and referenced groupings represented by a value set.",
+  "description": "Indicates the qualitative curation level of the concept codes in a value set.",
   "purpose": "Provides a machine-readable signal describing whether the value set content has been fully curated or may contain gaps, supporting trust and fitness-for-use decisions in analytics and public health workflows.",
   "kind": "complex-type",
   "abstract": false,
@@ -22,23 +22,23 @@
       "expression": "ValueSet"
     }
   ],
-  "constraint": [
-    {
-      "key": "ccov-1",
-      "severity": "error",
-      "human": "If status is partial, statusReason SHALL be provided.",
-      "expression": "extension.where(url = 'status').value.coding.code = 'partial' implies extension.where(url = 'statusReason').exists()"
-    }
-  ],
   "differential": {
     "element": [
       {
         "id": "Extension",
         "path": "Extension",
         "short": "Relative curation level of the codes in the value set",
-        "definition": "Represents the steward’s assessment of the completeness of clinical curation for the value set, including whether relevant codes or referenced component value sets may be missing.",
+        "definition": "Represents the steward’s assessment of the completeness of curation for the value set, including whether relevant codes or referenced component value sets may be missing.",
         "min": 0,
-        "max": "1"
+        "max": "1",
+        "constraint": [
+            {
+            "key": "ccov-1",
+            "severity": "error",
+            "human": "If level is 'partial', levelReason SHALL be provided.",
+            "expression": "extension.where(url='level').valueCodeableConcept.coding.code = 'partial' implies extension.where(url='levelReason').exists()"
+            }
+        ]
       },
       {
         "id": "Extension.value[x]",
@@ -59,41 +59,41 @@
         }
       },
       {
-        "id": "Extension.extension:status",
+        "id": "Extension.extension:level",
         "path": "Extension.extension",
-        "sliceName": "status",
+        "sliceName": "level",
         "min": 1,
         "max": "1"
       },
       {
-        "id": "Extension.extension:status.url",
+        "id": "Extension.extension:level.url",
         "path": "Extension.extension.url",
-        "fixedUri": "status"
+        "fixedUri": "level"
       },
       {
-        "id": "Extension.extension:status.valueCodeableConcept",
+        "id": "Extension.extension:level.valueCodeableConcept",
         "path": "Extension.extension.valueCodeableConcept",
         "min": 1,
         "max": "1",
         "binding": {
           "strength": "extensible",
-          "valueSet": "http://terminology.hl7.org/ValueSet/crmi-curation-coverage-status-codes"
+          "valueSet": "http://terminology.hl7.org/ValueSet/crmi-curation-coverage-level-codes"
         }
       },
       {
-        "id": "Extension.extension:statusReason",
+        "id": "Extension.extension:levelReason",
         "path": "Extension.extension",
-        "sliceName": "statusReason",
+        "sliceName": "levelReason",
         "min": 0,
         "max": "1"
       },
       {
-        "id": "Extension.extension:statusReason.url",
+        "id": "Extension.extension:levelReason.url",
         "path": "Extension.extension.url",
-        "fixedUri": "statusReason"
+        "fixedUri": "levelReason"
       },
       {
-        "id": "Extension.extension:statusReason.valueMarkdown",
+        "id": "Extension.extension:levelReason.valueMarkdown",
         "path": "Extension.extension.valueMarkdown",
         "min": 1,
         "max": "1"
