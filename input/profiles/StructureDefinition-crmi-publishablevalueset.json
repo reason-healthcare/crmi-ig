@@ -172,6 +172,23 @@
       "mustSupport" : true
     },
     {
+        "id": "ValueSet.extension:curationCoverageLevel",
+        "path": "ValueSet.extension",
+        "sliceName": "curationCoverageLevel",
+        "short": "Relative completeness of curation coverage for this value set",
+        "definition": "Indicates the qualitative curation level of the concept codes in a value set.",
+        "min": 0,
+        "max": "1",
+        "type": [
+            {
+                "code": "Extension",
+                "profile": [
+                    "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-curationCoverageLevel"
+                ]
+            }
+        ]
+    },
+    {
       "id" : "ValueSet.extension:relatedArtifact",
       "path" : "ValueSet.extension",
       "sliceName" : "relatedArtifact",

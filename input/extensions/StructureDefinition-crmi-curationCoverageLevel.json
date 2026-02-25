@@ -1,0 +1,157 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "crmi-curationCoverageLevel",
+  "url": "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-curationCoverageLevel",
+  "version": "1.0.0",
+  "name": "CRMICurationCoverageLevel",
+  "title": "CRMI Curation Coverage Level",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-02-11",
+  "publisher": "HL7 Clinical Decision Support (CDS)",
+  "description": "Indicates the qualitative curation level of the concept codes in a value set.",
+  "purpose": "Provides a machine-readable signal describing whether the value set content has been fully curated or may contain gaps, supporting trust and fitness-for-use decisions in analytics and public health workflows.",
+  "kind": "complex-type",
+  "abstract": false,
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "context": [
+    {
+      "type": "element",
+      "expression": "ValueSet"
+    }
+  ],
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Relative curation level of the codes in the value set",
+        "definition": "Represents the steward’s assessment of the completeness of curation for the value set, including whether relevant codes or referenced component value sets may be missing.",
+        "min": 0,
+        "max": "1",
+        "constraint": [
+            {
+                "key": "ccov-1",
+                "severity": "error",
+                "human": "If level is 'partial', levelReason SHALL be provided.",
+                "expression": "extension.where(url='level').value.coding.where(system = 'http://terminology.hl7.org/CodeSystem/curation-coverage-level-codes' and code ~ 'partial').exists() implies extension.where(url='levelReason').exists()"
+            }
+        ]
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Extension.extension:level",
+        "path": "Extension.extension",
+        "sliceName": "level",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:level.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "level"
+      },
+      {
+        "id": "Extension.extension:level.valueCodeableConcept",
+        "path": "Extension.extension.valueCodeableConcept",
+        "min": 1,
+        "max": "1",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://terminology.hl7.org/ValueSet/curation-coverage-level"
+        }
+      },
+      {
+        "id": "Extension.extension:levelReason",
+        "path": "Extension.extension",
+        "sliceName": "levelReason",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:levelReason.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "levelReason"
+      },
+      {
+        "id": "Extension.extension:levelReason.valueMarkdown",
+        "path": "Extension.extension.valueMarkdown",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:author",
+        "path": "Extension.extension",
+        "sliceName": "author",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:author.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "author"
+      },
+      {
+        "id": "Extension.extension:author.valueString",
+        "path": "Extension.extension.valueString",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:dateTime",
+        "path": "Extension.extension",
+        "sliceName": "dateTime",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:dateTime.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "dateTime"
+      },
+      {
+        "id": "Extension.extension:dateTime.valueDateTime",
+        "path": "Extension.extension.valueDateTime",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:note",
+        "path": "Extension.extension",
+        "sliceName": "note",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:note.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "note"
+      },
+      {
+        "id": "Extension.extension:note.valueMarkdown",
+        "path": "Extension.extension.valueMarkdown",
+        "min": 1,
+        "max": "1"
+      }
+    ]
+  }
+}

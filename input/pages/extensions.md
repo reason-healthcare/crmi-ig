@@ -57,6 +57,7 @@ These extensions provide terminology-related capabilities for specifying expansi
 <table class="grid">
   <tr><th>Extension</th><th>Description</th><th>FMM</th></tr>
  <tr><td><a href="{{site.data.fhir.ver.ext}}/StructureDefinition-cqf-expansionParameters.html">Expansion Parameters</a> </td><td><p>Specifies the expansion parameters that should be used to expand the ValueSet, or any ValueSets in the Library (or referenced by components of the Library).</p></td><td> <a class="fmm" href="http://hl7.org/fhir/versions.html#maturity" title="Maturity Level">3</a></td></tr>
+<tr><td><a href="StructureDefinition-crmi-curationCoverageLevel.html">CRMI Curation Coverage Level</a> </td><td><p>Indicates the qualitative curation level of the concept codes in a value set.</p></td><td> <a class="fmm" href="http://hl7.org/fhir/versions.html#maturity" title="Maturity Level">1</a></td></tr>
 </table>
 
 ### Packaging and Dependency Tracing Extensions
