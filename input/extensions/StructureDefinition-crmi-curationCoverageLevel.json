@@ -8,7 +8,7 @@
   "status": "active",
   "experimental": false,
   "date": "2026-02-11",
-  "publisher": "HL7 Clinical Reasoning Management Infrastructure (CRMI)",
+  "publisher": "HL7 Clinical Decision Support (CDS)",
   "description": "Indicates the qualitative curation level of the concept codes in a value set.",
   "purpose": "Provides a machine-readable signal describing whether the value set content has been fully curated or may contain gaps, supporting trust and fitness-for-use decisions in analytics and public health workflows.",
   "kind": "complex-type",
@@ -33,10 +33,10 @@
         "max": "1",
         "constraint": [
             {
-            "key": "ccov-1",
-            "severity": "error",
-            "human": "If level is 'partial', levelReason SHALL be provided.",
-            "expression": "extension.where(url='level').valueCodeableConcept.coding.code = 'partial' implies extension.where(url='levelReason').exists()"
+                "key": "ccov-1",
+                "severity": "error",
+                "human": "If level is 'partial', levelReason SHALL be provided.",
+                "expression": "extension.where(url='level').value.coding.where(system = 'http://terminology.hl7.org/CodeSystem/curation-coverage-level-codes' and code ~ 'partial').exists() implies extension.where(url='levelReason').exists()"
             }
         ]
       },
@@ -77,7 +77,7 @@
         "max": "1",
         "binding": {
           "strength": "extensible",
-          "valueSet": "http://terminology.hl7.org/ValueSet/crmi-curation-coverage-level-codes"
+          "valueSet": "http://terminology.hl7.org/ValueSet/curation-coverage-level"
         }
       },
       {

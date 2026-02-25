@@ -1,6 +1,6 @@
 {
   "resourceType": "ValueSet",
-  "id": "CurationCoverageLevelCodes",
+  "id": "curation-coverage-level",
   "extension": [
     {
         "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
@@ -15,17 +15,17 @@
         "valueInteger": 1
     }
   ],
-  "url": "http://terminology.hl7.org/ValueSet/crmi-curation-coverage-level-codes",
+  "url": "http://terminology.hl7.org/ValueSet/curation-coverage-level",
   "version": "1.0.0",
-  "name": "CurationCoverageLevelCodes",
-  "title": "Curation Coverage Level Codes",
+  "name": "CurationCoverageLevel",
+  "title": "Curation Coverage Level",
   "status": "active",
   "experimental": false,
   "description": "Value set containing codes that indicate the qualitative curation level of the concept codes in a value set.",
   "compose": {
     "include": [
       {
-        "system": "http://hl7.org/fhir/uv/crmi/CodeSystem/crmi-curation-coverage-level-codes"
+        "system": "http://hl7.org/fhir/uv/crmi/CodeSystem/curation-coverage-level-codes"
       }
     ]
   }
