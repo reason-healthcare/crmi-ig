@@ -25,7 +25,7 @@
   "compose": {
     "include": [
       {
-        "system": "http://hl7.org/fhir/uv/crmi/CodeSystem/curation-coverage-level-codes"
+        "system": "http://terminology.hl7.org/CodeSystem/curation-coverage-level-codes"
       }
     ]
   }
