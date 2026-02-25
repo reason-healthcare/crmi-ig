@@ -4,7 +4,7 @@
   "url": "http://example.org/fhir/ValueSet/example-diabetes-grouper",
   "version": "1.0.0",
   "name": "ExampleDiabetesGrouper",
-  "title": "Diabetes Condition Grouper",
+  "title": "Example Diabetes Condition Grouper",
   "status": "active",
   "description": "Example condition grouper for diabetes-related diagnoses.",
   "extension": [
