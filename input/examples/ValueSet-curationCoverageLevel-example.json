@@ -1,7 +1,7 @@
 {
   "resourceType": "ValueSet",
   "id": "example-diabetes-grouper",
-  "url": "http://example.org/fhir/ValueSet/diabetes-grouper",
+  "url": "http://example.org/fhir/ValueSet/example-diabetes-grouper",
   "version": "1.0.0",
   "name": "ExampleDiabetesGrouper",
   "title": "Diabetes Condition Grouper",
