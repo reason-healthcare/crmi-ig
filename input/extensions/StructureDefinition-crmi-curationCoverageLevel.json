@@ -3,7 +3,7 @@
   "id": "crmi-curationCoverageLevel",
   "url": "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-curationCoverageLevel",
   "version": "1.0.0",
-  "name": "CrmiCurationCoverageLevel",
+  "name": "CRMICurationCoverageLevel",
   "title": "CRMI Curation Coverage Level",
   "status": "active",
   "experimental": false,
