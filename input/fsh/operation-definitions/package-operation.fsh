@@ -254,7 +254,7 @@ possible resources is determined as all known (i.e. present on the server)
 dependencies and related artifacts. 
 
 Possible values are either a code to mean a category of resource types:
-* `all` (default) - all resource types
+* `all` - all resource types
 * `artifact` - the specified artifact
 * `canonical` - canonical resources (i.e. resources with a defined url element or that can be canonical resources using the artifact-url extension)
 * `terminology` - terminology resources (i.e. CodeSystem, ValueSet, NamingSystem, ConceptMap)
