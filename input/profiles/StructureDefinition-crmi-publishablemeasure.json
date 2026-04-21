@@ -7,7 +7,7 @@
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
-    "valueCode" : "cds"
+    "valueCode" : "cqi"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
@@ -18,13 +18,13 @@
   "title" : "CRMI Publishable Measure",
   "status" : "active",
   "experimental" : false,
-  "publisher": "HL7 International / Clinical Decision Support",
+  "publisher": "HL7 International / Clinical Quality Information",
   "contact": [
     {
       "telecom": [
         {
           "system": "url",
-          "value": "http://www.hl7.org/Special/committees/dss"
+          "value": "http://www.hl7.org/Special/committees/cqi"
         }
       ]
     }
