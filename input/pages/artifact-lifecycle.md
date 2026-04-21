@@ -169,8 +169,10 @@ Examples of labels in versions include:
 
 In addition to the use of semantic versioning, this IG adds support for specifying an _artifact version policy_ that applies to artifacts to allow consumers to understand what types of changes are indicated by version increments. This IG defines two version policies:
 
-* **metadata** - This policy indicates that non-substantive changes to the metadata elements of an artifact may be made without incrementing the version number
-* **strict** - This policy indicates that no changes to any elements of an artifact may be made without incrementing the version number
+* **metadata** - This policy indicates that non-substantive changes to the metadata elements of an artifact may be made without incrementing the version number.
+* **strict** - This policy indicates that no changes to any elements of an artifact may be made without incrementing the version number.
+* **loose** - This policy indicates that only breaking changes to an artifact require a change to the value of the version element.
+* **package** - This policy indicates that the version of the artifact is managed by the package in which the artifact appears. This policy is commonly used for artifacts that are published as part of an implementation guide.
 
 **Conformance Requirement 3.4 (Artifact Versioning Policy):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-3-4)
 {: #conformance-requirement-3-4}
@@ -179,12 +181,17 @@ In addition to the use of semantic versioning, this IG adds support for specifyi
       1. Non-substantive changes to the metadata elements of the artifact **MAY** be made without incrementing the version number, but
       2. When this occurs, the `date` element **SHALL** be updated
   3. When an artifact versioning policy is `strict`:
-      1. All changes to the elements of an artifact must be accompanied by an increment in the version number, appropriate to the level of change in the artifact consistent with semantic versioning
+      1. All changes to the elements of an artifact **SHALL** be accompanied by an increment in the version number, appropriate to the level of change in the artifact consistent with semantic versioning
+  4. When an artifact versioning policy is `loose`:
+      1. Breaking changes to an artifact **SHALL** be accompanied by an increment in the version number. Other changes to the artifact **MAY** be made without increment the version number, but
+      2. When this occurs, the `date` element **SHALL** be updated
+  5. When an artifact versioning policy is `package`:
+      1. The version of the artifact is dictated by the version of the package in which the artifact is published. Note in particular this means that changes in the version do not necessarily imply changes in the content of the artifact.
 
 #### Artifact Metadata
 {: #artifact-metadata}
 
-In addition to identity, lifecycle, and versioning, knowledge artifacts typically have additional metadata such as descriptive content, documentation, justification, and source. This is especially true of _published_ knowledge artifacts, which make this type of information available to enable consumers to find, understand, and ultimately implement the content. In FHIR, knowledge artifacts generally follow the [Metadata Resource](https://hl7.org/fhir/clinicalreasoning-knowledge-artifact-representation.html#metadata) pattern. The capabilities described in the artifact repository service make use of these elements for knowledge artifacts.
+In addition to identity, lifecycle, and versioning, knowledge artifacts typically have metadata such as descriptive content, documentation, justification, and source. This is especially true of _published_ knowledge artifacts, which make this type of information available to enable consumers to find, understand, and ultimately implement the content. In FHIR, knowledge artifacts generally follow the [Metadata Resource](https://hl7.org/fhir/clinicalreasoning-knowledge-artifact-representation.html#metadata) pattern. The capabilities described in the artifact repository service make use of these elements for knowledge artifacts.
 
 #### Artifact Collections
 {: #artifact-collections}
