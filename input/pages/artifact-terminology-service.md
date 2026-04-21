@@ -31,7 +31,7 @@ Artifact collections can specify _expansion rules_ (i.e. _manifest parameters_) 
 5. `check-valueset-version`
 6. `force-system-version`
 7. `force-valueset-version`
-8. `includeDraft` (defined in [CRMIValueSetExpand](OperationDefinition-crmi-valueset-expand.html))
+8. `includeUnreleasedContent` (defined in [CRMIValueSetExpand](OperationDefinition-crmi-valueset-expand.html)) (was `includeDraft` in prior versions)
 9. `lastActiveVersion` (defined in [CRMIValueSetExpand](OperationDefinition-crmi-valueset-expand.html))
 
 > NOTE: CRMIManifestParameters is a generalization of expansion parameters, and may also contain `default-canonical-version`, `check-canonical-version` and `force-canonical-version` parameters to identify pinned versions of canonical resources other than CodeSystems and ValueSets. See the [Version Manifest](version-manifest.html) discussion for more information.
@@ -182,7 +182,7 @@ Note that when a code system authority has not established a versioning system, 
     12. **SHOULD** support paging parameters
     13. **SHOULD** support the manifest parameter (defined in [CRMIValueSetExpand](OperationDefinition-crmi-valueset-expand.html))
     14. **SHOULD** support the manifestParameters parameter (defined in [CRMIValueSetExpand](OperationDefinition-crmi-valueset-expand.html))
-    15. **SHOULD** support the includeDraft parameter (defined in [CRMIValueSetExpand](OperationDefinition-crmi-valueset-expand.html))
+    15. **SHOULD** support the includeUnreleasedContent parameter (defined in [CRMIValueSetExpand](OperationDefinition-crmi-valueset-expand.html))
     16. **SHOULD** support the lastActiveVersion parameter (defined in [CRMIValueSetExpand](OperationDefinition-crmi-valueset-expand.html))
 
 ### Artifact Collections (i.e. Manifest Libraries)
@@ -213,7 +213,7 @@ Note that when a code system authority has not established a versioning system, 
     5. **SHALL** support the default-valueset-version parameter
     6. **SHALL** support the check-valueset-version parameter
     7. **SHALL** support the force-valueset-version parameter
-    8. **SHOULD** support the `includeDraft` parameter (defined in [CRMIValueSetExpand](OperationDefinition-crmi-valueset-expand.html))
+    8. **SHOULD** support the `includeUnreleasedContent` parameter (defined in [CRMIValueSetExpand](OperationDefinition-crmi-valueset-expand.html))
     9. **SHOULD** support the `lastActiveVersion` parameter (defined in [CRMIValueSetExpand](OperationDefinition-crmi-valueset-expand.html))
     9. **SHOULD** support other parameters
 
@@ -461,6 +461,8 @@ Note that as an organizer, this library just contains the collection-level infor
 
 This example illustrates the use of a draft quality program description to specify the version of SNOMED to be used for valuesets used by artifacts in the quality program.
 
+> NOTE: This parameter was called includeDraft in previous versions of this specification
+
 ```
 "contained": [
   {
@@ -476,7 +478,7 @@ This example illustrates the use of a draft quality program description to speci
         "valueBoolean": true
       },
       {
-        "name": "includeDraft",
+        "name": "includeUnreleasedContent",
         "valueBoolean": true
       }
     ]

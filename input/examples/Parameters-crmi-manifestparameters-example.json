@@ -20,7 +20,7 @@
       "valueBoolean": true
     },
     {
-      "name": "includeDraft",
+      "name": "includeUnreleasedContent",
       "valueBoolean": true
     }
   ]
