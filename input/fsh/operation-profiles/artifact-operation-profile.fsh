@@ -10,29 +10,26 @@ Title: "CRMI Operation Profile: Artifact Operation"
 Description: """
 Profile for knowledge artifact operations.
 
-This establishes input parameters when the operation is involked at the resource
+This establishes input parameters when the operation is invoked at the resource
 type level. The parameters are used to identify or specify the resource for the
 operation.
 
-* `url`: artifact URL&ast; for the resource
-* `version`: artifact version&ast; for the resource
-* `identifier`: business identifier for the resource
+* `url`: artifact canonical&ast; for the resource as a canonical reference (with or without a version) (or uri for non-canonical resources)
 * `resource`: instance of a canonical resource
 
 &ast;The artifact URL for canonical resources is `.url`, for non-canonical resources, it is
 the extension `artifact-url`. The version for canonical resources is `.version`, for non-canonical
 resources it is the extension `artifact-version`.
 
-NOTE: When invoking canonical operations using any combination of `url`,
-`version`, and `identifier`: 
-* if there is one-and-only-one matching resource, the operation should apply, otherwise an error state. 
-* if `resource` is specified then `url`, `version`, and `identifier` should be ignored.
+NOTE: When invoking canonical operations using a `url`, if the reference is versionless, the latest known version of the resource should be used, as specified in the [Artifact Versioning](artifact-lifecycle.html#artifact-versioning) discussion.
+
+NOTE: This pattern can be applied for operations that are invoked on one or more resources.
 """
 
 * parameter
   * insert SliceOnName
 
-* parameter contains url 0..1 MS
+* parameter contains url 0..* MS
 * parameter[url]
   * name = #url (exactly)
   * use = #in
@@ -40,24 +37,7 @@ NOTE: When invoking canonical operations using any combination of `url`,
   * max = "1"
   * obeys crmi-artifact-operation-1
 
-* parameter contains version 0..1 MS
-* parameter[version]
-  * name = #version (exactly)
-  * use = #in
-  * min = 0
-  * max = "1"
-  * type = #string
-
-* parameter contains identifier 0..1 MS
-* parameter[identifier]
-  * name = #identifier (exactly)
-  * use = #in
-  * min = 0
-  * max = "1"
-  * type = #string
-  * searchType = #token
-
-* parameter contains resource 0..1 MS
+* parameter contains resource 0..* MS
 * parameter[resource]
   * name = #resource (exactly)
   * use = #in
