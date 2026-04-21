@@ -9,7 +9,7 @@ Usage: #definition
 * name = "CRMILicenseRequirements"
 * title = "CRMI License Requirements"
 * description = """
-Obtains the license and copyright information for a resource and it's dependencies. Returns a parameters resource with:
+Obtains the license and copyright information for a resource and its dependencies. Returns a parameters resource with:
 * canonical (reference to the artifact)
 * publisher
 * copyright

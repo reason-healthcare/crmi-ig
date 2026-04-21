@@ -14,6 +14,7 @@ These operations are defined to support artifact packaging and dependency tracin
 |----|----|
 | [CRMI Package](OperationDefinition-crmi-package.html) | Packages a specified canonical resource for use in a target environment, optionally including related content such as dependencies, components, and testing cases and data. |
 | [CRMI DataRequirements](OperationDefinition-crmi-data-requirements.html) | Determines the effective data requirements for the artifact, including known components and dependencies, optionally informed by a version manifest. The data requirements operation is used for dependency gathering, as a way to understand the set of dependencies of a given artifact, as well as for data requirements determination, as a way to understand the complete set of data requirements for a given artifact. |
+| [CRMI LicenseRequirements](OperationDefinition-crmi-license-requirements.html) | Obtains the license and copyright information for a resource and its dependencies. |
 | [CRMI Resolve](OperationDefinition-crmi-resolve.html) | Resolves a canonical reference to a specific instance (or instances), using the _latest version_ algorithm described in the version manifest topic of this implementation guide. |
 {: .grid }
 
@@ -37,6 +38,7 @@ These operations are defined to support artifact authoring capabilities expected
 | [CRMI Artifact Diff](OperationDefinition-crmi-artifact-diff.html) | Describes the differences between two knowledge artifacts in FHIR Patch format by recursively resolving dependencies to get a holistic diff. |
 | [CRMI Clone](OperationDefinition-crmi-clone.html) | Creates a clone of a knowledge artifact (i.e. an artifact with a new canonical url), and all its children. |
 | [CRMI Draft](OperationDefinition-crmi-draft.html) | Creates a draft version of a knowledge artifact and all its children. |
+| [CRMI Publish](OperationDefinition-crmi-publish.html) | The publish operation processes a publishable bundle containing knowledge artifacts and their metadata. |
 | [CRMI Release](OperationDefinition-crmi-release.html) | The release operation performs release processing, including setting the `date` element of the resource and pinning versions of all direct and transitive references and recording them in the manifest. Child artifacts are also released, recursively. |
 | [CRMI Review](OperationDefinition-crmi-review.html) | The review operation supports applying a review to an existing artifact and all its children, regardless of status. The operation sets the `date` and `lastReviewDate` elements of the reviewed artifact and all its children, and is otherwise only allowed to create `ArtifactAssessment` (`Basic` with `cqf-artifactAssessment` extensions in R4) resources in the repository. |
 {: .grid }
