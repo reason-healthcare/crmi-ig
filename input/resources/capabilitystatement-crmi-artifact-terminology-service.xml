@@ -389,5 +389,12 @@
       <name value="package"/>
       <definition value="http://hl7.org/fhir/uv/crmi/OperationDefinition/crmi-package"/>
     </operation>
+    <operation>
+      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+        <valueCode value="SHALL"/>
+      </extension>
+      <name value="release"/>
+      <definition value="http://hl7.org/fhir/uv/crmi/OperationDefinition/crmi-release"/>
+    </operation>
   </rest>
 </CapabilityStatement>

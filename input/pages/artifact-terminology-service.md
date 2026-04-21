@@ -222,7 +222,7 @@ Note that when a code system authority has not established a versioning system, 
     2. If a `default-valueset-version` parameter is specified in the manifest parameters (and no version for the value set is specified in the artifact reference), the version has the same meaning as the `valueSetVersion` parameter to the $expand (in the case that value set is being expanded directly) or as the `default-valueset-version` parameter otherwise
     3. If a `default-system-version` parameter is specified in the manifest parameters (and no version for the code system is specified in the artifact reference), the version has the same meaning as the `system-version` parameter to the $expand
 
-6. **SHALL** support version manifest and release value set packaging: [Library/$package](OperationDefinition-crmi-package.html) operation
+6. **SHALL** support version manifest and value set packaging: [Library/$package](OperationDefinition-crmi-package.html) operation
     1. **SHALL** support the url parameter
     2. **SHALL** support the version parameter
     3. **SHOULD** support the offset parameter
@@ -237,7 +237,18 @@ Note that when a code system authority has not established a versioning system, 
     9. **SHOULD** support check-valueset-version parameter (overrides value set versions specified in the manifest)
     10. **SHOULD** support force-valueset-version parameter (overrides value set versions specified in the manifest)
 
-7. **SHALL** support operations to enable maintenance of release specifications for artifact collections using Library resources that conform to the CRMIManifestLibrary profile.
+7. **SHALL** support version manifest and value set release: [Library/$release](OperationDefinition-crmi-release.html) operation
+    1. **SHALL** support the id parameter
+    2. **SHALL** support the version parameter
+    3. **SHOULD** support the versionBehavior parameter
+    4. **SHOULD** support the requireVersionSpecificReferences parameter
+    5. **SHOULD** support the requireActiveReferences parameter
+    6. **SHOULD** support the latestFromTxServer parameter
+    7. **SHOULD** support the experimentalBehavior parameter
+    8. **SHOULD** support the releaseDate parameter
+    9. **SHOULD** support the releaseLabel parameter
+
+8. **SHALL** support operations to enable maintenance of release specifications for artifact collections using Library resources that conform to the CRMIManifestLibrary profile.
     1. **SHALL** support creating a Library (using POST)
     2. **SHALL** support updating a Library (using PUT)
     3. **SHALL** support updating the status of a Library in `draft` to `active` (using PUT)
