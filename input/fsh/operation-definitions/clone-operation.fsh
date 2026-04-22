@@ -44,11 +44,17 @@ Usage: #definition
 * parameter[=].max = "1"
 * parameter[=].documentation = "The logical id of the artifact to clone. The server must know the artifact (e.g. it is defined explicitly in the server's resources)"
 * parameter[=].type = #string
+* parameter[+].name = #url
+* parameter[=].use = #in
+* parameter[=].min = 1
+* parameter[=].max = "1"
+* parameter[=].documentation = "The url value for the newly cloned artifact"
+* parameter[=].type = #canonical
 * parameter[+].name = #version
 * parameter[=].use = #in
 * parameter[=].min = 1
 * parameter[=].max = "1"
-* parameter[=].documentation = "A semantic version in the form MAJOR.MINOR.PATCH.REVISION"
+* parameter[=].documentation = "The version value for the newly cloned artifact"
 * parameter[=].type = #string
 * parameter[+].name = #return
 * parameter[=].use = #out
