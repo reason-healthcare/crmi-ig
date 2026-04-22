@@ -402,4 +402,6 @@ When a terminology endpoint is provided, the server or third party servers may s
   For example, a measure repository SHALL include
   all the required library resources, but would not necessarily have the
   ValueSet resources referenced by the measure.
+
+  Servers SHOULD return artifact resources with the `id` element set to match the tail of the canonical URL.
   """
