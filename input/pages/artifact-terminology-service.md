@@ -180,8 +180,6 @@ Note that when a code system authority has not established a versioning system, 
     2. **SHALL** support the valueSetVersion parameter
     3. **SHALL** support the activeOnly parameter
     4. **SHALL** support the displayLanguage parameter
-    5. **SHALL** support the limitedExpansion parameter
-    6. **SHALL** support the default-to-latest-version parameter
     7. **SHALL** support the default-system-version parameter (**MAY** be represented as system-version for backwards-compatibility)
     8. **SHALL** support the check-system-version parameter
     9. **SHALL** support the force-system-version parameter
