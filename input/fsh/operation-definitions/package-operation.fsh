@@ -455,4 +455,8 @@ When a terminology endpoint is provided, the server or third party servers may s
   ValueSet resources referenced by the measure.
 
   Servers SHOULD return artifact resources with the `id` element set to match the tail of the canonical URL.
+
+  Note that because the package operation allows include and exclude parameters, the results of 
+  a package may not always include all dependencies required for evaluation. i.e. $package result alone may not be complete. 
+  The caller that excludes a package is responsible for making it available elsewhere.
   """
