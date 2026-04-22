@@ -258,8 +258,9 @@ Note that when a code system authority has not established a versioning system, 
 8. **SHALL** support operations to enable maintenance of release specifications for artifact collections using Library resources that conform to the CRMIManifestLibrary profile.
     1. **SHALL** support creating a Library (using POST)
     2. **SHALL** support updating a Library (using PUT)
-    3. **SHALL** support updating the status of a Library in `draft` to `active` (using PUT)
-    4. **SHALL** support updating the status of a Library in `active` status to `retired` (using PUT)
+    3. **MAY** support deleting a Library (using DELETE)
+    4. **SHALL** support updating the status of a Library in `draft` to `active` (using PUT)
+    5. **SHALL** support updating the status of a Library in `active` status to `retired` (using PUT)
     6. **SHALL** reject attempts to create a Library that has the same `url` and `version` as another library
 
 ### Server Operations
