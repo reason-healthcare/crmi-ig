@@ -108,10 +108,10 @@ pages:
     title: Introduction
   artifact-lifecycle.md:
     title: Artifact Lifecycle
-    version-manifest.md:
-      title: Artifact Manifest
-    artifact-conventions.md:
-      title: Artifact Conventions
+  version-manifest.md:
+    title: Artifact Manifest
+  artifact-conventions.md:
+    title: Artifact Conventions
   packaging.md:
     title: Packaging
   testing.md:
