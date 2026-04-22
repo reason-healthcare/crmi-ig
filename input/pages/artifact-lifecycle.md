@@ -182,6 +182,7 @@ In addition to the use of semantic versioning, this IG adds support for specifyi
       2. When this occurs, the `date` element **SHALL** be updated
   3. When an artifact versioning policy is `strict`:
       1. All changes to the elements of an artifact **SHALL** be accompanied by an increment in the version number, appropriate to the level of change in the artifact consistent with semantic versioning
+      2. Note that strict does not include changes to the `id` and `meta` elements (i.e. compatible with FHIR signing), as well as the `status` and `lastReviewDate` elements
   4. When an artifact versioning policy is `loose`:
       1. Breaking changes to an artifact **SHALL** be accompanied by an increment in the version number. Other changes to the artifact **MAY** be made without increment the version number, but
       2. When this occurs, the `date` element **SHALL** be updated
