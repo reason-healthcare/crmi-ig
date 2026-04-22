@@ -19,6 +19,8 @@ Within the CRMI framework, two important distinctions are made:
 
 By clearly defining these elements at the start, the Artifact Manifest helps clinicians, analysts, and implementers understand what is included, how it should be applied, and how to ensure safe, consistent use across systems.
 
+An important use case for artifact manifests is the [Value Set Package](http://build.fhir.org/ig/cqframework/vsp-ig), a mechanism for implementation guide consumers to easily obtain all the terminology used by a particular version of a published implementation guide.
+
 This topic is divided into two main areas, first the manifest [Specification](#manifest), providing a detailed description of how manifests are constructed and used, and second is the [Background](#background) discussion, providing an in-depth review of one of the primary motivating use cases for an artifact manifest and how it addresses the challenge.
 
 ### Specification
