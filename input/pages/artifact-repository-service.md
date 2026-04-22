@@ -1,3 +1,4 @@
+{::options toc_levels="1..6"/}
 {:toc}
 
 This page documents the conformance expectations of an artifact repository service to support authoring, publishing, and distribution of FHIR-based knowledge artifacts including questionnaires, decision support rules, quality measures, guidelines, and reporting specifications, as well as their associated terminologies and data element descriptions.

@@ -8,11 +8,10 @@ Usage: #definition
 * title = "CRMI Release"
 * kind = #operation
 * description = """
-The release operation performs release processing, including setting the date element of the resource and pinning 
-versions of all direct and transitive references and recording them in the manifest. Child artifacts (i.e. artifacts 
-whose lifecycle is tied to and managed with the parent artifact) are also released, recursively.
-
-
+The release operation performs release processing as the final step in the authoring process, once all content changes
+are complete. Release processing includes setting the date element of the resource and pinning versions of all direct 
+and transitive references and recording them in the manifest. Child artifacts (i.e. artifacts whose lifecycle is tied 
+to and managed with the parent artifact) are also released, recursively.
 """
 * code = #release
 * comment = """

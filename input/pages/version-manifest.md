@@ -1,3 +1,4 @@
+{::options toc_levels="1..6"/}
 {:toc}
 
 {: #version-manifest }
@@ -94,6 +95,7 @@ The following list specifies for each parameter of the ValueSet/$expand operatio
 | default-valueset-version | SHALL | Use canonicalVersion for a CRMI STU1 server |
 | check-valueset-version | SHALL | Use checkCanonicalVersion for a CRMI STU1 server |
 | force-valueset-version | SHALL | Use forceCanonicalVersion for a CRMI STU1 server |
+{: .grid}
 
 Note that a value set pin (i.e. a default-valueset-version, check-valueset-version, or force-valueset-version) should be used to provide the value for the valueSetVersion parameter when operating on the pinned value set.
 
@@ -144,6 +146,7 @@ The following list specifies for each parameter of the ValueSet/$validate-code o
 | manifest | SHALL NOT | |
 | manifestParameters | SHALL NOT | |
 | tx-resource | MAY | |
+{: .grid}
 
 Note that as with the ValueSet/$expand operation, a value set pin (i.e. a default-valueset-version, check-valueset-version, or force-valueset-version) should be used to provide the value for the valueSetVersion parameter when operating on the pinned value set.
 

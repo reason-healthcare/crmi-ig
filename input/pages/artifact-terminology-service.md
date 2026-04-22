@@ -1,3 +1,4 @@
+{::options toc_levels="1..6"/}
 {:toc}
 
 This page documents the use cases and conformance expectations of a terminology service to support authoring, distribution, and evaluation of FHIR-based knowledge artifacts as described in this implementation guide.

@@ -1,3 +1,4 @@
+{::options toc_levels="1..6"/}
 {: toc}
 
 {: #publishing}
