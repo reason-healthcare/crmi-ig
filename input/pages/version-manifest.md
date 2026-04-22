@@ -105,7 +105,7 @@ Conceptually, a _manifest_ is a way to provide the versions for versionless refe
 
 #### Manifest Parameters
 
-A _manifest parameters_, is a Parameters resource conforming to at least the [CRMIManifestParameters](StructureDefinition-crmi-manifestparameters.html) profile, and contains the pinned versions of versionless references that appear in an artifact collection. As an example, an ImplementationGuide may include a manifest parameters that pins references from artifacts in the implementation guide. (See the [Managing Canonical Versions](https://build.fhir.org/ig/FHIR/ig-guidance/pinning.html#controlling-where-pinning-happens) topic in FHIR IG Guidance for a discussion of how to do this using the IG publishing infrastructure.
+A _manifest parameters_, is a Parameters resource conforming to at least the [CRMIManifestParameters](StructureDefinition-crmi-manifestparameters.html) profile, and contains _expansion rules_ (i.e. the defaults for parameters that control expansion behaviors overall) as well as the pinned versions of versionless references that appear in an artifact collection. As an example, an ImplementationGuide may include a manifest parameters that pins references from artifacts in the implementation guide. (See the [Managing Canonical Versions](https://build.fhir.org/ig/FHIR/ig-guidance/pinning.html#controlling-where-pinning-happens) topic in FHIR IG Guidance for a discussion of how to do this using the IG publishing infrastructure.
 
 More generally, given a collection of artifacts, the CRMIManifestParameters resource is constructed by:
 
@@ -121,6 +121,8 @@ More generally, given a collection of artifacts, the CRMIManifestParameters reso
         3. Otherwise, record the version in the manifest parameters using the default-canonical-version parameter
 
 These parameters are specifically named so that they can be used to provide values for the parameters to operations such as `ValueSet/$expand`, `ValueSet/$validate-code`, and so on. Effectively, the manifest parameters provide defaults for expansion parameters. In addition, because the process above allows for existing artifact versions to be specified, it can also be used to proactively pin versions of specific artifacts as input to the process (e.g. selecting a specific version of SNOMED). This is the same mechanism the IG publisher uses to provide [expansion-parameters](https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html).
+
+> Note that an important difference between the manifest parameters and the full manifest library is that the manifest parameters will only contain version pinning entries for versionless references, whereas a manifest library lists all the dependencies, regardless of whether the reference was versioned.
 
 #### Manifest Library
 
