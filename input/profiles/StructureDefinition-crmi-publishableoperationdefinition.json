@@ -64,6 +64,25 @@
       "max" : "1"
     },
     {
+      "id" : "OperationDefinition.extension:knowledgeCapability",
+      "path" : "OperationDefinition.extension",
+      "sliceName" : "knowledgeCapability",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "OperationDefinition.extension:knowledgeCapability.value[x]",
+      "path" : "OperationDefinition.extension.value[x]",
+      "min" : 1,
+      "type" : [{
+        "code" : "code"
+      }],
+      "fixedCode": "publishable"
+    },
+    {
       "id" : "OperationDefinition.extension:identifier",
       "path" : "OperationDefinition.extension",
       "sliceName" : "identifier",

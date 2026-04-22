@@ -64,6 +64,25 @@
       "max" : "1"
     },
     {
+      "id" : "Questionnaire.extension:knowledgeCapability",
+      "path" : "Questionnaire.extension",
+      "sliceName" : "knowledgeCapability",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Questionnaire.extension:knowledgeCapability.value[x]",
+      "path" : "Questionnaire.extension.value[x]",
+      "min" : 1,
+      "type" : [{
+        "code" : "code"
+      }],
+      "fixedCode": "publishable"
+    },
+    {
       "id" : "Questionnaire.extension:usage",
       "path" : "Questionnaire.extension",
       "sliceName" : "usage",

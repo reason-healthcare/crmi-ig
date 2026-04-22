@@ -59,7 +59,7 @@ resource as the first entry. This ensures that the bundle represents a complete,
 publishable package with proper metadata and resource organization defined by
 the implementation guide.
 
-This profile supports the distribution and management of knowledge artifacts as
+This profile supports the distribution and management of artifacts as
 atomic units, enabling consistent publication and deployment of related clinical
 decision support resources, quality measures, and other healthcare knowledge
 content.

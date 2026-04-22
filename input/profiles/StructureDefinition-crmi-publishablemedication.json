@@ -64,6 +64,25 @@
       "max" : "1"
     },
     {
+      "id" : "Medication.extension:knowledgeCapability",
+      "path" : "Medication.extension",
+      "sliceName" : "knowledgeCapability",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.extension:knowledgeCapability.value[x]",
+      "path" : "Medication.extension.value[x]",
+      "min" : 1,
+      "type" : [{
+        "code" : "code"
+      }],
+      "fixedCode": "publishable"
+    },
+    {
       "id" : "Medication.extension:date",
       "path" : "Medication.extension",
       "sliceName" : "date",

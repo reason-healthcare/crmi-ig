@@ -69,6 +69,25 @@
       "max" : "1"
     },
     {
+      "id" : "NamingSystem.extension:knowledgeCapability",
+      "path" : "NamingSystem.extension",
+      "sliceName" : "knowledgeCapability",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "NamingSystem.extension:knowledgeCapability.value[x]",
+      "path" : "NamingSystem.extension.value[x]",
+      "min" : 1,
+      "type" : [{
+        "code" : "code"
+      }],
+      "fixedCode": "publishable"
+    },
+    {
       "id" : "NamingSystem.extension:identifier",
       "path" : "NamingSystem.extension",
       "sliceName" : "identifier",

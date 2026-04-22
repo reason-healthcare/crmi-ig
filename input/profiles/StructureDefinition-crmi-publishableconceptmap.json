@@ -64,6 +64,25 @@
       "max" : "1"
     },
     {
+      "id" : "ConceptMap.extension:knowledgeCapability",
+      "path" : "ConceptMap.extension",
+      "sliceName" : "knowledgeCapability",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "ConceptMap.extension:knowledgeCapability.value[x]",
+      "path" : "ConceptMap.extension.value[x]",
+      "min" : 1,
+      "type" : [{
+        "code" : "code"
+      }],
+      "fixedCode": "publishable"
+    },
+    {
       "id" : "ConceptMap.extension:copyrightLabel",
       "path" : "ConceptMap.extension",
       "sliceName" : "copyrightLabel",
