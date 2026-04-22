@@ -1,0 +1,85 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "crmi-intendedUsageContext",
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+    "valueInteger" : 1
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+    "valueCode" : "cds"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+    "valueCode" : "trial-use"
+  }],
+  "url": "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-intendedUsageContext",
+  "name": "CRMIIntendedUsageContext",
+  "title": "CRMI Intended Usage Context",
+  "status": "active",
+  "experimental": false,
+  "date": "2025-10-24",
+  "publisher": "HL7 International / Clinical Decision Support",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/dss"
+        }
+      ]
+    }
+  ],
+  "description": "An intended usage context associated with the dependency on which it appears. When the dependency is packaged, this usageContext will be applied to the packaged artifact.",
+  "purpose": "This extension allows for the specification of an intended usage context associated with the dependency on which it appears. This allows for usage contexts to be defined in a context-specific way and then applied to the artifact when packaged.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "RelatedArtifact"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Intended Usage Context",
+        "definition": "An intended usage context associated with the dependency on which it appears. When the dependency is packaged, this usageContext will be applied to the packaged artifact.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
+        "fixedUri": "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-intendedUsageContext"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "type": [
+          {
+            "code": "UsageContext"
+          }
+        ]
+      }
+    ]
+  }
+}

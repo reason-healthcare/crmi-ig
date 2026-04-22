@@ -290,6 +290,18 @@
         "mustSupport": true
       },
       {
+        "id": "Library.relatedArtifact:component.intendedUsageContext",
+        "path": "Library.relatedArtifact.extension",
+        "sliceName": "intendedUsageContext",
+        "min": 0,
+        "max": "*",
+        "type": [{
+          "code" : "Extension",
+          "profile" : ["http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-intendedUsageContext"]
+        }],
+        "mustSupport": true
+      },
+      {
         "id": "Library.relatedArtifact:component.type",
         "path": "Library.relatedArtifact.type",
         "min": 1,
@@ -361,6 +373,18 @@
         "requirements": "Artifacts must be able to unambiguously specify the versions of all dependencies used by artifacts in a specification. The version of each dependency SHALL be included in the canonical reference to the dependency.",
         "min": 0,
         "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Library.relatedArtifact:component.intendedUsageContext",
+        "path": "Library.relatedArtifact.extension",
+        "sliceName": "intendedUsageContext",
+        "min": 0,
+        "max": "*",
+        "type": [{
+          "code" : "Extension",
+          "profile" : ["http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-intendedUsageContext"]
+        }],
         "mustSupport": true
       },
       {
