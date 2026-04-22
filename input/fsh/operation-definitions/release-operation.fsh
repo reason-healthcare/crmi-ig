@@ -7,9 +7,32 @@ Usage: #definition
 * name = "CRMIRelease"
 * title = "CRMI Release"
 * kind = #operation
-* description = "The release operation performs release processing, including setting the date element of the resource and pinning versions of all direct and transitive references and recording them in the manifest. Child artifacts (i.e. artifacts of which the existing artifact is composed) are also released, recursively."
+* description = """
+The release operation performs release processing, including setting the date element of the resource and pinning 
+versions of all direct and transitive references and recording them in the manifest. Child artifacts (i.e. artifacts 
+whose lifecycle is tied to and managed with the parent artifact) are also released, recursively.
+
+
+"""
 * code = #release
-* comment = "The release operation supports the ability of an authoring repository to release an artifact and, transitively, any referenced and owned (as indicated by the 'crmiOwned' extension on the RelatedArtifact reference) component artifacts. The operation SHALL update the date of the artifact and all owned children to the given releaseDate parameter, if specified, otherwise the current date. The operation SHALL ensure that all references for which a version is determined are recorded in the version manifest. For both components and dependencies, if versions are not specified in the relevant reference, the operation will lookup the version to be used in the version manifest.\\n\\nWhen 'requireVersionSpecificReferences' is true then all references SHALL either be version-specific or, if they are not, an entry SHALL exist in the version manifest to specify which version of the referenced resource should be used. If, 'requireVersionSpecificReferences' is true and there exists a reference that is not version-specific and no entry exists in the version manifest for the referenced resource, the artifact is considered to be in an invalid state and not eligible for release. If 'requireVersionSpecificReferences' is false (the default), then unversioned references are valid and the artifact can be released in that state - deferring the version determination to the consumer.\\n\\nWhen 'requireActiveReferences' is true then the operation SHALL throw an error if any 'draft' or 'retired' dependencies are found."
+* comment = """
+The release operation supports the ability of an authoring repository to release an artifact and, transitively, 
+any referenced and owned (as indicated by the 'crmiOwned' extension on the RelatedArtifact reference) component 
+artifacts. The operation SHALL update the date of the artifact and all owned children to the given releaseDate 
+parameter, if specified, otherwise the current date. The operation SHALL ensure that all references for which a 
+version is determined are recorded in the version manifest. For both components and dependencies, if versions 
+are not specified in the relevant reference, the operation will lookup the version to be used in the version manifest.
+
+When 'requireVersionSpecificReferences' is true then all references SHALL either be version-specific or, if they are 
+not, an entry SHALL exist in the version manifest to specify which version of the referenced resource should be used. 
+If, 'requireVersionSpecificReferences' is true and there exists a reference that is not version-specific and no entry 
+exists in the version manifest for the referenced resource, the artifact is considered to be in an invalid state and 
+not eligible for release. If 'requireVersionSpecificReferences' is false (the default), then unversioned references 
+are valid and the artifact can be released in that state - deferring the version determination to the consumer.
+
+When 'requireActiveReferences' is true then the operation SHALL throw an error if any 'draft' or 'retired' dependencies 
+are encountered.
+"""
 * resource[+] = #ActivityDefinition
 * resource[+] = #CapabilityStatement
 * resource[+] = #CodeSystem

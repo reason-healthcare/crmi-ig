@@ -16,6 +16,7 @@ The above diagram depicts the high-level phases of content development as:
     * Design (L2)
     * Develop (L3)
     * Testing
+    * Release
     * Packaging
 * Publishing
 * Implementation
@@ -25,6 +26,10 @@ The above diagram depicts the high-level phases of content development as:
 The authoring phase is supported by the Shareable and Computable profiles defined in this implementation guide. See the [Profiles](profiles.html) page for a complete description of these capability categories and profiles.
 
 See [Artifact Conventions](artifact-conventions.html) for artifact authoring conventions.
+
+When creating a specification that references other artifacts, the $data-requirements operation can be used to determine the set of dependencies referenced by the artifact. This set of dependencies can then be used to infer manifest parameters, using [$infer-manifest-parameters](Operation-crmi-infer-manifest-parameters) operation, and then the release process consists only of determining latest version for any unversioned references in the artifact.
+
+Note that the release process must still be used to establish the version for any unversioned references in the artifact because it is a transactional operation (i.e. the resulting manifest must contain all the unversioned references in the artifact or any of its dependencies at the time of release).
 
 #### Artifact Status
 {: #artifact-status}
@@ -300,6 +305,10 @@ A _component_ artifact is an artifact that is designated specifically as part of
 In addition, artifacts can be _owned_ meaning that the lifecycle of the owned artifact is entirely controlled by the containing artifact, as opposed to the artifact having its own lifecycle. This is typically done for a collection of artifacts, but can also be done with specific elements (for example the _primary measure library_ of a measure can be an _owned_ artifact).
 
 Within an artifact collection, the `isOwned` extension is used on the `relatedArtifact` entries of type `composed-of` specifying the components to designate whether a component is owned (i.e. managed entirely as part of the collection). A given artifact may only be owned by a single parent artifact.
+
+### Release
+
+Conceptually, release is the final step of the authoring process and involves producing a final version of the content that is reviewed, approved, tested, and will be stable once released (i.e. released content is immutable). Systems vary in how they perform release processing, as well as how they indicate that content is released, so this specification is not prescriptive about that process, but does provide a [$release](OperationDefinition-crmi-release.html) operation to facilitate the processing associated with releasing content as part of the capabiliities of an authoring repository.
 
 ### Publishing
 
