@@ -181,6 +181,25 @@ operation.
 """
 
 * parameter[+]
+  * name = #bundleType
+  * min = 0
+  * max = "1"
+  * use = #in
+  * type = #code
+  * documentation = """
+Determines the type of the output Bundle, may be either collection, or transaction.
+If not specified, the output bundle will be a transaction bundle, unless paging is used,
+or determined to be necessary by the server.
+
+If paging is used, the bundle type SHALL be
+searchset, and the resulting bundles SHALL conform to the paging guidance here: https://hl7.org/fhir/R4/http.html#paging
+
+It is an error to request a transaction or collection bundle and use paging. Servers are 
+free to return a TOO-COSTLY error if a transaction or collection bundle is requested for
+a package that is deemed to be too large by the server.
+"""
+
+* parameter[+]
   * name = #offset
   * min = 0
   * max = "1"
