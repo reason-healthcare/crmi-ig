@@ -228,6 +228,8 @@ Possible values are either a code to mean a category of resource types:
 * `examples` - example resources (i.e. resources identified as examples in the implementation guide)
 
 Or a valid FHIR resource Type (e.g. `PlanDefinition`, `MedicationKnowledge`, etc)
+
+Note that the outcome library for the overall $package operation is not subject to the include/exclude parameters.
 """
 
 * parameter[+]
@@ -266,6 +268,8 @@ Possible values are either a code to mean a category of resource types:
 * `examples` - example resources (i.e. resources identified as examples in the implementation guide)
 
 Or a valid FHIR resource Type (e.g. `PlanDefinition`, `MedicationKnowledge`, etc)
+
+Note that the outcome library for the overall $package operation is not subject to the include/exclude parameters.
 """
 
 * parameter[+]
