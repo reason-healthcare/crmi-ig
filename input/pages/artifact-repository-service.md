@@ -75,6 +75,14 @@ Repository support for other types of artifacts **SHALL** follow the same patter
   2. **SHALL** support the `exact` modifier
   3. **SHOULD** support the `text` modifier
 3. Servers **SHALL** support the expression of `AND` and `OR` search parameters for all search parameters, as defined in the [composite](http://hl7.org/fhir/search.html#combining) search parameter topic.
+4. Servers **SHALL** support language capabilities as specified by the Terminology Ecosystem implementation guide: [Language Support](https://hl7.org/fhir/uv/tx-ecosystem/languages.html).
+    1. This requirement does not mandate support for multiple languages, only that the server respond correctly to requests for language support.
+5. Servers **SHOULD** support the following _results_ parameters for all search interactions
+  1. _sort
+  2. _count
+  3. _summary
+  4. _total
+  5. _elements
 
 > Note that for servers that support write capabilities, the `version` element of an artifact is a business version, and is independent of [resource versioning](https://hl7.org/fhir/R4/resource.html#versions). Artifact repositories that support write capabilities may wish to implement resource versioning as well as artifact (business) versioning to ensure auditability of changes, however, this is an implementation decision and does not impact the conceptual support for artifact versions (because each different version of an artifact will necessarily be a different resource instance in the server). Note also that R6 has introduced additional capabilities to better support resource versioning for servers that provide such support.
 

@@ -287,6 +287,13 @@ Note that when a code system authority has not established a versioning system, 
 6. Servers **SHALL** support language capabilities as specified by the Terminology Ecosystem implementation guide: [Language Support](https://hl7.org/fhir/uv/tx-ecosystem/languages.html).
     1. This requirement does not mandate support for multiple languages, only that the server respond correctly to requests for language support.
 
+7. Servers **SHOULD** support the following _results_ parameters:
+    1. _sort
+    2. _count
+    3. _summary
+    4. _total
+    5. _elements
+
 ### Capability Statement
 
 The above capabilities are formally captured in the following capability statement:
