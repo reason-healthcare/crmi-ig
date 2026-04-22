@@ -39,12 +39,12 @@
     {
       "code": "default",
       "display": "Default",
-      "definition": "The version provided will be applied to the root artifact and all owned components if a version is not specified."
+      "definition": "The version provided will be applied to the root artifact and all owned components that do not have a version already specified."
     },
     {
       "code": "check",
       "display": "Check",
-      "definition": "If the root artifact has a specified version different from the version passed to the operation, an error will be returned."
+      "definition": "If the root artifact, or any owned component artifact, has a specified version different from the version passed to the operation, an error will be returned."
     },
     {
       "code": "force",
