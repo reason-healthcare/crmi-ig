@@ -2,6 +2,8 @@
 
 This page documents the use cases and conformance expectations of a terminology service to support authoring, distribution, and evaluation of FHIR-based knowledge artifacts as described in this implementation guide.
 
+The terminology service described here is an extension of the [Terminology Service]({{site.data.fhir.ver}}terminology-service.html) defined by the base FHIR specification; nothing in this specification contradicts or prevents conformance with the base FHIR terminology service capability statement. In addition, the service described here is intended to be consistent with and complementary to the requirements defined by the [FHIR Terminology Ecosystem](https://hl7.org/fhir/uv/tx-ecosystem/requirements.html).
+
 This implementation guide is not advocating for any particular central authority for terminology content, rather the intent is to propose a capability statement that enables publishers to build consistent and interoperable terminology services that support authoring, distribution, and implementation of FHIR-based knowledge artifacts.
 
 This implementation guide is not prescriptive about authentication or authorization, but strongly recommends that these capabilities be addressed through standard mechanisms, as described in [FHIR standard security mechanisms](https://www.hl7.org/fhir/security.html). In addition, though knowledge artifacts typically do not include patient-specific information, test data for knowledge artifacts can sometimes be derived from or based on real patient information. In these cases, care must be taken to ensure the data is scrubbed to remove any possibility of violating patient privacy or security.
