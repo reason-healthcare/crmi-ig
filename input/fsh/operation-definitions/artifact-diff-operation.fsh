@@ -23,6 +23,7 @@ The operation is only valid between two resources of the same type and can optio
 * resource[+] = #ConceptMap
 * resource[+] = #ExampleScenario
 * resource[+] = #GraphDefinition
+* resource[+] = #Group
 * resource[+] = #ImplementationGuide
 * resource[+] = #Library
 * resource[+] = #Measure

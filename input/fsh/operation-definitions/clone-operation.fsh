@@ -17,6 +17,7 @@ Usage: #definition
 * resource[+] = #ConceptMap
 * resource[+] = #ExampleScenario
 * resource[+] = #GraphDefinition
+* resource[+] = #Group
 * resource[+] = #ImplementationGuide
 * resource[+] = #Library
 * resource[+] = #Measure

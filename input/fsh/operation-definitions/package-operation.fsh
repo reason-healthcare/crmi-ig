@@ -172,13 +172,12 @@ including code systems.
   * type = #canonical
   * targetProfile = Canonical(http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-manifestlibrary)
   * documentation = """
-Specifies a reference to an asset-collection library that defines version
+Specifies an asset-collection library that defines version
 bindings for code systems and other canonical resources referenced by the value
 set(s) being expanded and other canonical resources referenced by the artifact.
-When specified, code systems and other canonical resources identified as
-`depends-on` related artifacts in the manifest library have the same meaning as
-specifying that code system or other canonical version in the `system-version`
-parameter of an expand or the `canonicalVersion` parameter.
+When specified, the expansion parameters of the manifest are used to provide expansion
+behavior and canonical resolution for dependencies encountered while processing the 
+operation.
 """
 
 * parameter[+]
