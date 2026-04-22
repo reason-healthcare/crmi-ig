@@ -254,8 +254,16 @@ Possible values are either a code to mean a category of resource types:
 * `knowledge` - knowledge artifacts (i.e. ActivityDefinition, Library, PlanDefinition, Measure, Questionnaire)
 * `tests` - test cases and data (i.e. test cases as defined by the testing specification in this implementation guide)
 * `examples` - example resources (i.e. resources identified as examples in the implementation guide)
+* `key` - key resources (i.e. resources included because they are referenced by key elements of profiles)
 
 Or a valid FHIR resource Type (e.g. `PlanDefinition`, `MedicationKnowledge`, etc)
+
+Dependency roles are used to determine how include/exclude processing is performed:
+* If a dependency has no dependencyRole, it is assumed to be a `default` dependency
+* If no dependency role include code is specified, all dependencies are assumed to be included
+* A key dependency is one encountered while walking a dependency from a key element
+* Dependency roles are imposed recursively (i.e. a CodeSystem referenced from a key ValueSet is a key CodeSystem)
+* Dependency roles are cumulative (i.e. a CodeSystem dependency referenced from both a key ValueSet and an example ValueSet is both a key and an example dependency)
 
 Note that the outcome library for the overall $package operation is not subject to the include/exclude parameters.
 """
@@ -294,8 +302,16 @@ Possible values are either a code to mean a category of resource types:
 * `knowledge` - knowledge artifacts (i.e. ActivityDefinition, Library, PlanDefinition, Measure, Questionnaire)
 * `tests` - test cases and data (i.e. test cases as defined by the testing specification in this implementation guide)
 * `examples` - example resources (i.e. resources identified as examples in the implementation guide)
+* `key` - key resources (i.e. resources included because they are referenced by key elements of profiles)
 
 Or a valid FHIR resource Type (e.g. `PlanDefinition`, `MedicationKnowledge`, etc)
+
+Dependency roles are used to determine how include/exclude processing is performed:
+* If a dependency has no dependencyRole, it is assumed to be a `default` dependency
+* If no dependency role include code is specified, all dependencies are assumed to be included
+* A key dependency is one encountered while walking a dependency from a key element
+* Dependency roles are imposed recursively (i.e. a CodeSystem referenced from a key ValueSet is a key CodeSystem)
+* Dependency roles are cumulative (i.e. a CodeSystem dependency referenced from both a key ValueSet and an example ValueSet is both a key and an example dependency)
 
 Note that the outcome library for the overall $package operation is not subject to the include/exclude parameters.
 """

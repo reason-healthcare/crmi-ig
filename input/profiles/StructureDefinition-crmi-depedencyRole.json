@@ -1,0 +1,76 @@
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "crmi-dependencyRole",
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+    "valueInteger" : 3
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+    "valueCode" : "cds"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+    "valueCode" : "trial-use"
+  }],
+  "url" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-dependencyRole",
+  "name" : "CRMIDependencyRole",
+  "title" : "CRMI Dependency Role",
+  "status" : "active",
+  "experimental" : false,
+  "publisher" : "HL7 International / Clinical Decision Support",
+  "contact" : [{
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://www.hl7.org/Special/committees/dss"
+    }]
+  }],
+  "description" : "Indicates what role(s) the dependency is playing. Dependencies can play multiple roles. A dependency that does not state any roles is assumed to play the `default` role (i.e. there is no need to state that a dependency plays the `default` role, but the code is used in the include parameter to indicate whether default dependencies are included in a package).",
+  "purpose" : "A manifest library must be able to track the roles a dependency is playing within the artifact.",
+  "fhirVersion" : "4.0.1",
+  "mapping" : [{
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  }],
+  "kind" : "complex-type",
+  "abstract" : false,
+  "context" : [{
+    "type" : "element",
+    "expression" : "canonical"
+  }],
+  "type" : "Extension",
+  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation" : "constraint",
+  "differential" : {
+    "element" : [{
+      "id" : "Extension",
+      "path" : "Extension",
+      "short" : "What role",
+      "definition" : "Indicates what role(s) the dependency is playing. Dependencies can play multiple roles. A dependency that does not state any roles is assumed to play the `default` role (i.e. there is no need to state that a dependency plays the `default` role, but the code is used in the include parameter to indicate whether default dependencies are included in a package).",
+      "min" : 0,
+      "max" : "*"
+    },
+    {
+      "id" : "Extension.url",
+      "path" : "Extension.url",
+      "type" : [{
+        "code" : "uri"
+      }],
+      "fixedUri" : "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-dependencyRole"
+    },
+    {
+      "id" : "Extension.value[x]",
+      "path" : "Extension.value[x]",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }],
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "http://terminology.hl7.org/ValueSet/dependendency-role"
+      }
+    }]
+  }
+}

@@ -1,0 +1,50 @@
+{
+    "resourceType": "CodeSystem",
+    "id": "dependency-role-codes",
+    "extension": [
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+            "valueCode": "cds"
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+            "valueCode": "trial-use"
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+            "valueInteger": 1
+        }
+    ],
+    "url": "http://terminology.hl7.org/CodeSystem/dependency-role-codes",
+    "version": "1.0.0",
+    "name": "DependencyRoleCodes",
+    "title": "Dependency Role Codes",
+    "status": "active",
+    "experimental": false,
+    "description": "Codes describing the roles a dependency can play with respect to an artifact.",
+    "caseSensitive": true,
+    "valueSet": "http://terminology.hl7.org/ValueSet/dependency-role",
+    "content": "complete",
+    "concept": [
+        {
+            "code": "default",
+            "display": "Default",
+            "definition": "A dependency that does not otherwise have a specific role. There is no need to state that a dependency plays a default role, this code is used in the include parameter to indicate whether default dependencies are included in the package."
+        },
+        {
+            "code": "key",
+            "display": "Key",
+            "definition": "A dependency that is included because it is referenced from a [key element](https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#model-views)."
+        },
+        {
+            "code": "example",
+            "display": "Example",
+            "definition": "A dependency that is included because it is part of an example, or referenced from an example context (e.g. a ValueSet referenced from an example binding)."
+        },
+        {
+            "code": "test",
+            "display": "Test",
+            "definition": "A dependency that is included because it is part of a test."
+        }
+    ]
+}

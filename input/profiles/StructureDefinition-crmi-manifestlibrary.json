@@ -467,6 +467,22 @@
         ]
       },
       {
+        "id": "Library.relatedArtifact:dependency.resource.extension:dependencyRole",
+        "path": "Library.relatedArtifact.resource.extension",
+        "sliceName": "dependencyRole",
+        "short": "What role",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-dependencyRole"
+            ]
+          }
+        ]
+      },
+      {
         "id": "Library.content",
         "path": "Library.content",
         "min": 0,

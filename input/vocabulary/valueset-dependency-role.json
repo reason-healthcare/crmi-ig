@@ -1,0 +1,32 @@
+{
+  "resourceType": "ValueSet",
+  "id": "dependency-role",
+  "extension": [
+    {
+        "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+        "valueCode": "cds"
+    },
+    {
+        "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+        "valueCode": "trial-use"
+    },
+    {
+        "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+        "valueInteger": 1
+    }
+  ],
+  "url": "http://terminology.hl7.org/ValueSet/crmi-dependency-role",
+  "version": "1.0.0",
+  "name": "DependencyRole",
+  "title": "Dependency Role",
+  "status": "active",
+  "experimental": false,
+  "description": "Value set containing codes that indicate the roles that dependencies can play with respect to an artifact.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/dependency-role-codes"
+      }
+    ]
+  }
+}
