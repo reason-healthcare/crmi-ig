@@ -2,7 +2,22 @@
 
 {: #version-manifest }
 
-This topic discusses the use of terminology within artifacts and the challenges associated with achieving stable and predictable behavior of artifacts in the presence of external publication cycles.
+This topic introduces the concept of an _artifact manifest_ as a way to manage challenges associated with dependency management, and in particular ensuring stable and predictable behavior of artifacts with external dependencies and publication cycles.
+
+### Overview
+
+An _Artifact Manifest_ is a structured summary that describes the key resources, parameters, and supporting libraries that make up an artifact (such as a value set, library, or implementation guide). In practical terms, it functions like a table of contents or packing slip for an artifact package. It lists what is included, where to find it, and how it should be used.
+
+_Simple definition:_
+
+An Artifact Manifest is a guide to what's inside an artifact package. It tells you which parts belong together, how they are connected, and what supporting pieces (like parameters or libraries) are needed for the artifact to work correctly.
+
+Within the CRMI framework, two important distinctions are made:
+
+* _Manifest Library_ - a Library resource that identifies the dependencies and configurations needed by the artifact.
+* _Manifest Parameters_ (sometimes referred to as "pinned canonicals") - the fixed references or inputs that anchor the artifact to specific versions for all external dependencies, ensuring consistent behavior when it is implemented or reused.
+
+By clearly defining these elements at the start, the Artifact Manifest helps clinicians, analysts, and implementers understand what is included, how it should be applied, and how to ensure safe, consistent use across systems.
 
 ### Artifact Terminology Usage
 
