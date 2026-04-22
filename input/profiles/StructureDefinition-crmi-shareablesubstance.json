@@ -67,13 +67,20 @@
       "id" : "Substance.extension:knowledgeCapability",
       "path" : "Substance.extension",
       "sliceName" : "knowledgeCapability",
-      "min" : 0,
-      "max" : "*",
       "type" : [{
         "code" : "Extension",
         "profile" : ["http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability"]
       }],
       "mustSupport" : true
+    },
+    {
+      "id" : "Substance.extension:knowledgeCapability.value[x]",
+      "path" : "Substance.extension.value[x]",
+      "min" : 1,
+      "type" : [{
+        "code" : "code"
+      }],
+      "fixedCode": "shareable"
     },
     {
       "id" : "Substance.extension:knowledgeRepresentationLevel",

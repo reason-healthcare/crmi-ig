@@ -67,13 +67,20 @@
       "id" : "StructureMap.extension:knowledgeCapability",
       "path" : "StructureMap.extension",
       "sliceName" : "knowledgeCapability",
-      "min" : 0,
-      "max" : "*",
       "type" : [{
         "code" : "Extension",
         "profile" : ["http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability"]
       }],
       "mustSupport" : true
+    },
+    {
+      "id" : "StructureMap.extension:knowledgeCapability.value[x]",
+      "path" : "StructureMap.extension.value[x]",
+      "min" : 1,
+      "type" : [{
+        "code" : "code"
+      }],
+      "fixedCode": "shareable"
     },
     {
       "id" : "StructureMap.extension:knowledgeRepresentationLevel",

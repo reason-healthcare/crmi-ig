@@ -67,13 +67,20 @@
       "id" : "ImplementationGuide.extension:knowledgeCapability",
       "path" : "ImplementationGuide.extension",
       "sliceName" : "knowledgeCapability",
-      "min" : 0,
-      "max" : "*",
       "type" : [{
         "code" : "Extension",
         "profile" : ["http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability"]
       }],
       "mustSupport" : true
+    },
+    {
+      "id" : "ImplementationGuide.extension:knowledgeCapability.value[x]",
+      "path" : "ImplementationGuide.extension.value[x]",
+      "min" : 1,
+      "type" : [{
+        "code" : "code"
+      }],
+      "fixedCode": "shareable"
     },
     {
       "id" : "ImplementationGuide.extension:versionAlgorithm",

@@ -67,13 +67,20 @@
       "id" : "ConceptMap.extension:knowledgeCapability",
       "path" : "ConceptMap.extension",
       "sliceName" : "knowledgeCapability",
-      "min" : 0,
-      "max" : "*",
       "type" : [{
         "code" : "Extension",
         "profile" : ["http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability"]
       }],
       "mustSupport" : true
+    },
+    {
+      "id" : "ConceptMap.extension:knowledgeCapability.value[x]",
+      "path" : "ConceptMap.extension.value[x]",
+      "min" : 1,
+      "type" : [{
+        "code" : "code"
+      }],
+      "fixedCode": "shareable"
     },
     {
       "id" : "ConceptMap.extension:versionAlgorithm",
