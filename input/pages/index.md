@@ -73,11 +73,15 @@ page in the menu bar:
 
 -  **[Home](index.html)**: Summary and background information for the Canonical Resource Management Infrastructure Implementation Guide
 -  **[Introduction](introduction.html)**: Detailed overview of the content management lifecycle and the background for this guide
+-  **[Conformance](conformance.html)**: Conformance information for the implementation guide
 -  **Artifact Management**
     -  **[Artifact lifecycle](artifact-lifecycle.html)**: Content lifecycle of knowledge artifacts
+    -  **[Artifact Manifest](version-manifest.html)**: Detailed specification for artifact manifests
+    -  **[Artifact Conventions](artifact-conventions.html)**: Best-practices and conventions for canonical resource authoring and management
     -  **[Packaging](packaging.html)**: Packaging considerations for canonical resources and knowledge artifacts 
     -  **[Publishing](publishing.html)**: Publishing considerations for canonical resources and knowledge artifacts 
     -  **[Distribution](distribution.html)**: Distribution considerations for canonical resources and knowledge artifacts 
+    -  **[Signing](artifact-signing.html)**: Detailed specification for artifact signing
 -  **FHIR Artifacts**
     -  **[Profiles](profiles.html)**: List of profiles defined for use by knowledge artifacts
     -  **[Extensions](extensions.html)**: List of extensions defined and used by knowledge artifacts
@@ -86,7 +90,7 @@ page in the menu bar:
     -  **[Terminology](terminology.html)**: Terminology defined in this implementation guide.
     -  **[Artifact Summary](artifacts.html)**: Index of all conformance artifacts defined in this implementation guide.
 -  **[Downloads](downloads.html)**: Links to downloadable artifacts for implementations.
--  **[Version History](changes.html)**: Version and change history
+-  **[Changes](changes.html)**: Version and change history
 
 ### Acknowledgements
 {: #acknowledgements}
