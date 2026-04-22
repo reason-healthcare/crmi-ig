@@ -276,6 +276,9 @@ Note that when a code system authority has not established a versioning system, 
 
 5. Servers **SHALL** support the expression of AND and OR search parameters for all search parameters, as defined in the [composite search parameter topic](http://hl7.org/fhir/R4/search.html#combining)
 
+6. Servers **SHALL** support language capabilities as specified by the Terminology Ecosystem implementation guide: [Language Support](https://hl7.org/fhir/uv/tx-ecosystem/languages.html).
+    1. This requirement does not mandate support for multiple languages, only that the server respond correctly to requests for language support.
+
 ### Capability Statement
 
 The above capabilities are formally captured in the following capability statement:
