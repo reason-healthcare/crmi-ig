@@ -233,6 +233,14 @@
     "type" : "boolean"
   },
   {
+    "name" : "includeNoLongerPresent",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "Indicates that if a concept code explicitly named in the compose.include.concept.code of the definition is not present in the version of the code system used for the expansion, but is known to the server to have been valid in a prior version, it should still be included in the expansion with the version in which it was last known to the server to be valid. In addition, the concept SHOULD have a lastVersionPresent concept property to indicate the concept is not present in the requested version (i.e. the version specified in the definition or via a system parameter).\n\nServers MAY choose to throw an exception if asked to include codes that are no longer present and they do not support this capability.\n\nThe includeNoLongerPresent parameter can only be used with activeOnly = false, setting includeNoLongerPresent when activeOnly is true has no effect (i.e. concept codes are only included if they are active in the version of the code system used for the expansion).\n\nAs with includeLastVersionActive, includeNoLongerPresent is useful for code system management, especially when setting up code system content for value sets that need to be supported.",
+    "type" : "boolean"
+  },
+  {
     "name" : "default-valueset-version",
     "use" : "in",
     "min" : 0,

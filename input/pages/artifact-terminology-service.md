@@ -35,6 +35,7 @@ Artifact collections can specify _expansion rules_ (i.e. _manifest parameters_) 
 7. `force-valueset-version`
 8. `includeUnreleasedContent` (defined in [CRMIValueSetExpand](OperationDefinition-crmi-valueset-expand.html)) (was `includeDraft` in prior versions)
 9. `includeLastVersionActive` (defined in [CRMIValueSetExpand](OperationDefinition-crmi-valueset-expand.html))
+10. `includeNoLongerPresent` (defined in [CRMIValueSetExpand](OperationDefinition-crmi-valueset-expand.html))
 
 > NOTE: CRMIManifestParameters is a generalization of expansion parameters, and may also contain `default-canonical-version`, `check-canonical-version` and `force-canonical-version` parameters to identify pinned versions of canonical resources other than CodeSystems and ValueSets. See the [Version Manifest](version-manifest.html) discussion for more information.
 
@@ -193,6 +194,7 @@ Note that when a code system authority has not established a versioning system, 
     14. **SHOULD** support the manifestParameters parameter (defined in [CRMIValueSetExpand](OperationDefinition-crmi-valueset-expand.html))
     15. **SHOULD** support the includeUnreleasedContent parameter (defined in [CRMIValueSetExpand](OperationDefinition-crmi-valueset-expand.html))
     16. **SHOULD** support the includeLastVersionActive parameter (defined in [CRMIValueSetExpand](OperationDefinition-crmi-valueset-expand.html))
+    16. **SHOULD** support the includeNoLongerPresent parameter (defined in [CRMIValueSetExpand](OperationDefinition-crmi-valueset-expand.html))
     17. To align with the FHIR Terminology Ecosystem requirements, servers
         17. **SHOULD** support the tx-resource and cache-id parameters to improve performance
         18. **SHOULD** support includeDefinition
@@ -231,6 +233,7 @@ Note that when a code system authority has not established a versioning system, 
     7. **SHALL** support the force-valueset-version parameter
     8. **SHOULD** support the `includeUnreleasedContent` parameter (defined in [CRMIValueSetExpand](OperationDefinition-crmi-valueset-expand.html))
     9. **SHOULD** support the `includeLastVersionActive` parameter (defined in [CRMIValueSetExpand](OperationDefinition-crmi-valueset-expand.html))
+    9. **SHOULD** support the `includeNoLongerPresent` parameter (defined in [CRMIValueSetExpand](OperationDefinition-crmi-valueset-expand.html))
     9. **SHOULD** support other parameters
 
 5. Because this capability results in the potential for parameter values to be supplied in multiple places, the following rules apply:

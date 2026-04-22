@@ -211,6 +211,30 @@
         ]
       },
       {
+        "id": "Parameters.parameter:includeNoLongerPresent",
+        "path": "Parameters.parameter",
+        "sliceName": "includeNoLongerPresent",
+        "short": "Include codes that are no longer present?",
+        "definition": "Indicates that if a concept code explicitly named in the compose.include.concept.code of the definition is not present in the version of the code system used for the expansion, but is known to the server to have been valid in a prior version, it should still be included in the expansion with the version in which it was last known to the server to be valid. In addition, the concept SHOULD have a lastVersionPresent concept property to indicate the concept is not present in the requested version (i.e. the version specified in the definition or via a system parameter).",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Parameters.parameter:includeNoLongerPresent.name",
+        "path": "Parameters.parameter.name",
+        "fixedString": "includeNoLongerPresent"
+      },
+      {
+        "id": "Parameters.parameter:includeNoLongerPresent.value[x]",
+        "path": "Parameters.parameter.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ]
+      },
+      {
         "id": "Parameters.parameter:system-version",
         "path": "Parameters.parameter",
         "sliceName": "system-version",
