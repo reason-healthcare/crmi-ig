@@ -56,11 +56,15 @@ When the cqf-expansionParameters extension is used, it is intended to be binding
 
 Terminology services **MAY** act as a repository for content that is managed and created elsewhere (i.e. hosted content AKA a convenience copy), or they **MAY** provide features to author and manage content directly, or any combination. When hosting content that is managed externally, the service must ensure that the content of the resource is materially the same (i.e. the values for all elements are the same where those elements are specified in the Shareable and Publishable profiles) as the source of truth. In particular, for systems that provide both management and hosting of externally managed content, the status element for hosted content **SHALL** be the same as the status of the content in the source of truth.
 
+#### Support Content
+
+A _supported_ code system is any code system that a server supports correctly for calls to `$expand`, `$validate-code` and `$lookup`. A _pre-defined_ code system is any code system that a server makes available via the `/CodeSystem` endpoint. These definitions are found in the [Terminology Ecosystem IG](https://hl7.org/fhir/uv/tx-ecosystem/requirements.html#supporting-codesystems) and are used with the same meaning in this specification.
+
 ### Code Systems
 
-1. **SHALL** Represent basic CodeSystem information, as specified by the [ShareableCodeSystem](http://hl7.org/fhir/shareablecodesystem.html) profile, which includes url, version, name, status, experimental, publisher, description, caseSensitive, content, and concept.
+1. For predefined content, servers **SHALL** Represent basic CodeSystem information, as specified by the [ShareableCodeSystem](http://hl7.org/fhir/shareablecodesystem.html) profile, which includes url, version, name, status, experimental, publisher, description, caseSensitive, content, and concept.
 
-2. For published CodeSystems, **SHALL** represent publishable CodeSystem information, as specified by the [CRMIPublishableCodeSystem](StructureDefinition-crmi-publishablecodesystem.html) profile.
+2. For published CodeSystems, servers **SHALL** represent publishable CodeSystem information, as specified by the [CRMIPublishableCodeSystem](StructureDefinition-crmi-publishablecodesystem.html) profile.
 
 3. For hosted content, the data-absent-reason extension with a value of unknown **MAY** be used to satisfy required cardinality constraints of the Shareable and Publishable code system profiles when an element is not present in the source of truth for the content.
 
