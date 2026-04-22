@@ -187,21 +187,21 @@
         ]
       },
       {
-        "id": "Parameters.parameter:lastActiveVersion",
+        "id": "Parameters.parameter:includeLastVersionActive",
         "path": "Parameters.parameter",
-        "sliceName": "lastActiveVersion",
+        "sliceName": "includeLastVersionActive",
         "short": "Indicate last active version?",
-        "definition": "Indicates that if a code explicitly named in the definition is not active in the current (or requested) version of the code system for the expansion, that it should be included in the expansion with the version of the code system in which it was last active.",
+        "definition": "indicates that if a code explicitly named in the compose.include.concept.code of the definition is not active in the version of the code system used for the expansion, that it should be included in the expansion, with inactive true, the requested version of the code system, as well as a concept property of lastVersionActive that indicates the version of the code system in which it was last known to be active.",
         "min": 0,
         "max": "1"
       },
       {
-        "id": "Parameters.parameter:lastActiveVersion.name",
+        "id": "Parameters.parameter:includeLastVersionActive.name",
         "path": "Parameters.parameter.name",
-        "fixedString": "lastActiveVersion"
+        "fixedString": "includeLastVersionActive"
       },
       {
-        "id": "Parameters.parameter:lastActiveVersion.value[x]",
+        "id": "Parameters.parameter:includeLastVersionActive.value[x]",
         "path": "Parameters.parameter.value[x]",
         "min": 1,
         "type": [
