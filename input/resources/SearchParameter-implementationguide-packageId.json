@@ -1,0 +1,16 @@
+{
+  "resourceType": "SearchParameter",
+  "id": "implementationguide-packageId",
+  "url": "http://hl7.org/fhir/uv/crmi/SearchParameter/implementationguide-packageId",
+  "name": "ImplementationGuidePackageId",
+  "status": "active",
+  "description": "Search by series description in ImagingStudy",
+  "code": "packageId",
+  "base": ["ImplementationGuide"],
+  "type": "string",
+  "expression": "ImplementationGuide.packageId",
+  "xpathUsage": "normal",
+  "multipleOr": true,
+  "multipleAnd": true,
+  "modifier": ["exact", "contains"]
+}

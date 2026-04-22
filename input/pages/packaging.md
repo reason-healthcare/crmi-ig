@@ -68,6 +68,12 @@ Artifacts may also be packaged following the FHIR Package specification. This in
 
 See also: [FHIR Package Specification](https://confluence.hl7.org/display/FHIR/NPM+Package+Specification)
 
+Note that FHIR NPM packages are expected to have an ImplementationGuide resource with a packageId that matches the id of the package. This implementation guide defines a `packageId` search parameter for implementation guides. For example:
+
+```
+GET [base]/ImplementationGuide?packageId=hl7.fhir.uv.cql#1.0.0
+```
+
 ### Artifact Terminology
 
 To support packaging and distribution of the terminology required for a particular artifact, this implementation guide defines terminology profiles for the capability categories:
