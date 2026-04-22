@@ -170,6 +170,10 @@ Note that when a code system authority has not established a versioning system, 
     12. **SHALL** support the force-valueset-version parameter (defined in [CRMIValueSetValidateCode](OperationDefinition-crmi-valueset-validate-code.html))
     13. **SHOULD** support the manifest parameter (defined in [CRMIValueSetValidateCode](OperationDefinition-crmi-valueset-validate-code.html))
     14. **SHOULD** support the manifestParameters parameter (defined in [CRMIValueSetValidateCode](OperationDefinition-crmi-valueset-validate-code.html))
+    15. To align with FHIR Terminology Ecosystem requirements, servers
+        1. **SHOULD** support tx-resource
+        2. **SHOULD** support lenient-display-validation
+        3. **SHOULD** support inferSystem
 
 11. Support [ValueSet/$expand](http://hl7.org/fhir/R4/valueset-operation-expand.html)
     1. **SHALL** support the url parameter
@@ -191,6 +195,13 @@ Note that when a code system authority has not established a versioning system, 
     14. **SHOULD** support the manifestParameters parameter (defined in [CRMIValueSetExpand](OperationDefinition-crmi-valueset-expand.html))
     15. **SHOULD** support the includeUnreleasedContent parameter (defined in [CRMIValueSetExpand](OperationDefinition-crmi-valueset-expand.html))
     16. **SHOULD** support the lastActiveVersion parameter (defined in [CRMIValueSetExpand](OperationDefinition-crmi-valueset-expand.html))
+    17. To align with the FHIR Terminology Ecosystem requirements, servers
+        17. **SHOULD** support the tx-resource and cache-id parameters to improve performance
+        18. **SHOULD** support includeDefinition
+        19. **SHOULD** support property
+        20. **SHOULD** support excludeNested
+        21. **SHOULD** support lenient-display-validation
+
 
 ### Artifact Collections (i.e. Manifest Libraries)
 
