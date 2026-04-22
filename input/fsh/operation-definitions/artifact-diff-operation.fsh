@@ -88,7 +88,7 @@ Create a canonical-like reference (e.g.
 
 * Given a single `artifactEndpointConfiguration`
   * When `artifactRoute` is present
-    * And `artifactRoute` *starts with* canonical or artifact reference
+    * And canonical or artifact reference *starts with* `artifactRoute`
     * Then attempt to resolve with `endpointUri` or `endpoint`
   * When `artifactRoute` is not present
     * Then attempt to resolve with `endpointUri` or `endpoint`
@@ -97,7 +97,7 @@ Create a canonical-like reference (e.g.
   * And attempt to resolve with `endpointUri` or `endpoint` in order until resolved
 
 Rank each `artifactEndpointConfiguration` such that:
-* if `artifactRoute` is present *and* `artifactRoute` *starts with* canonical or artifact reference: rank based on number of matching characters 
+* if `artifactRoute` is present *and* canonical or artifact reference *starts with* `artifactRoute`: rank based on number of matching characters 
 * if `artifactRoute` is *not* present: include but rank lower
 
 NOTE: For evenly ranked `artifactEndpointConfiguration`s, order as defined in the
