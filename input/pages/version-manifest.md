@@ -54,6 +54,103 @@ These parameters are specifically named so that they can be used to provide valu
 
 > Note that an important difference between the manifest parameters and the full manifest library is that the manifest parameters will only contain version pinning entries for versionless references, whereas a manifest library lists all the dependencies, regardless of whether the reference was versioned.
 
+###### Applying Manifest Parameters
+
+**[ValueSet/$expand](OperationDefinition-crmi-valueset-expand.html)**
+
+The following list specifies for each parameter of the ValueSet/$expand operation, whether that parameter name can appear in a manifest parameters, along with any notes about how the parameter is handled:
+
+| Parameter | Support | Notes |
+|----|----|----|
+| url | SHALL NOT | |
+| valueSet | SHALL NOT | |
+| valueSetVersion | SHALL NOT | |
+| context | SHOULD NOT | |
+| contextDirection | SHOULD NOT | |
+| filter | SHOULD NOT | |
+| date | SHALL NOT | There is no need for date-based dependency management with a manifest |
+| offset | SHOULD NOT | |
+| count | SHOULD NOT | |
+| includeDesignations | MAY | |
+| designation | MAY | |
+| includeDefinition | MAY | |
+| activeOnly | SHALL | |
+| excludeNested | MAY | |
+| excludeNotForUI | MAY | |
+| excludePostCoordinated | MAY | |
+| displayLanguage | MAY | Overrides whatever language is specified in the context (e.g. in the resource being validated) |
+| defaultDisplayLanugage | MAY | Provides displayLanguage if there's no language specified in the context (e.g. in the resource being validated) |
+| exclude-system | MAY | |
+| system-version | SHOULD NOT | Deprecated, use default-system-version |
+| default-system-version | SHALL | Use system-version for a CRMI STU1 server |
+| check-system-version | SHALL | |
+| force-system-version | SHALL | |
+| manifest | SHALL NOT | |
+| manifestParameters | SHALL NOT | |
+| includeDraft | SHOULD NOT | Deprecated, use includeUnreleasedContent |
+| includeUnreleasedContent | SHOULD | Use includeDraft for a CRMI STU1 server |
+| includeLastVersionActive | SHOULD | |
+| includeNoLongerPresent | SHOULD | |
+| default-valueset-version | SHALL | Use canonicalVersion for a CRMI STU1 server |
+| check-valueset-version | SHALL | Use checkCanonicalVersion for a CRMI STU1 server |
+| force-valueset-version | SHALL | Use forceCanonicalVersion for a CRMI STU1 server |
+
+Note that a value set pin (i.e. a default-valueset-version, check-valueset-version, or force-valueset-version) should be used to provide the value for the valueSetVersion parameter when operating on the pinned value set.
+
+For example, given a manifest `http://example.org/Library/manifest-foo` with the following parameter:
+
+```json
+{
+  "name": "default-valueset-version",
+  "valueCanonical": "http://example.org/ValueSet/foo|1.0.0"
+}
+```
+
+When performing the following $expand:
+
+```
+GET [base]/ValueSet/$expand?url=http://example.org/ValueSet/foo?manifest=http://example.org/Library/manifest-foo
+```
+
+The `default-valueset-version` parameter is used to provide a value for the `valueSetVersion` parameter, identifying the version of the value set to be expanded (1.0.0 in this case).
+
+**[ValueSet/$validate-code](OperationDefinition-crmi-valueset-validate-code.html)**
+
+The following list specifies for each parameter of the ValueSet/$validate-code operation, whether that parameter name can appear in a manifest parameters, along with any notes about how the parameter is handled:
+
+| Parameter | Support | Notes |
+|----|----|----|
+| url | SHALL NOT | |
+| context | SHOULD NOT | |
+| valueSet | SHALL NOT | |
+| valueSetVersion | SHALL NOT | |
+| code | SHALL NOT | |
+| system | SHALL NOT | |
+| systemVersion | SHALL NOT | |
+| display | SHALL NOT | |
+| coding | SHALL NOT | |
+| codeableConcept | SHALL NOT | |
+| date | SHALL NOT | There is no need for date-based dependency management with a manifest |
+| abstract | SHOULD NOT | |
+| displayLanguage | MAY | Overrides whatever language is specified in the context (e.g. in the resource being validated) |
+| defaultDisplayLanguage | MAY | Provides displayLanguage if there's no language specified in the context (e.g. in the resource being validated) |
+| useSupplement | SHOULD | |
+| lenient-display-validation | SHOULD | |
+| valueset-membership-only | SHOULD | |
+| inferSystem | SHALL NOT | This parameter is context-specific |
+| default-valueset-version | SHALL | |
+| check-valueset-version | SHALL | |
+| force-valueset-version | SHALL | |
+| manifest | SHALL NOT | |
+| manifestParameters | SHALL NOT | |
+| tx-resource | MAY | |
+
+Note that as with the ValueSet/$expand operation, a value set pin (i.e. a default-valueset-version, check-valueset-version, or force-valueset-version) should be used to provide the value for the valueSetVersion parameter when operating on the pinned value set.
+
+**Other Operations**
+
+For other operations, manifest parameters are provided by name when the manifest parameter matches the name of a parameter in the operation being invoked.
+
 ##### Manifest Library
 
 Building on the capability provided by manifest parameters, a _manifest library_ is an _asset collection_ library (i.e. an instance of a Library resource with a type of `asset-collection`), and conforming to the [CRMIManifestLibrary](StructureDefinition-crmi-manifestlibrary.html) profile that provides complete dependency and usage information for an artifact collection. Roughly, a manifest library will contain:
@@ -67,7 +164,7 @@ To support artifacts that make use of Clinical Quality Language, a version manif
 
 The following sections discuss how a manifest can be used within implementation and authoring environments to support predictable dependency resolution.
 
-#### Implementation Strategy
+#### Manifest Determination
 
 Determining which manifest to use can be done in several ways. There are three potential implementation strategies considered here:
 
