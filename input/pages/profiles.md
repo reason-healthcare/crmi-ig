@@ -33,6 +33,7 @@ For knowledge artifacts, a _shareable_ artifact defines the minimum expectations
 | **Element** | **Guidance** |
 |----|----|
 | url | **SHALL** be provided because it provides the globally unique identity for the artifact |
+| webSource | **SHOULD** be used to provide a human-readable web page describing the artifact if it is different than the canonical |
 | version | **SHALL** be provided because it ensures version tracking is possible for the artifact |
 | versionAlgorithm | **SHOULD** be provided if a version algorithm other than semver or date-based is used to ensure systems understand how to interpret the version element of the artifact |
 | name | **SHOULD** be provided to ensure systems can reliably make use of code-generation and other system-level processing for the artifact |
@@ -71,6 +72,8 @@ For knowledge artifacts, a _publishable_ artifact defines the expectations for p
 | reviewer | **SHOULD** be provided to inform consumers what individuals or organizations were involved in the review of the artifact |
 | endorser | **SHOULD** be provided to inform consumers what individuals or organizations have endorsed the artifact |
 | relatedArtifact | **SHOULD** be provided to support additional documentation, citations, etc. for the artifact |
+| packageSource | **SHOULD** be provided if the artifact was published as part of a package |
+| authoritativeSource | **SHOULD** be provided to indicate the original source of truth for the content |
 {: .grid }
 
 ### Computable

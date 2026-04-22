@@ -65,6 +65,18 @@
       "max" : "1"
     },
     {
+      "id" : "StructureMap.meta.extension:packageSource",
+      "path" : "StructureMap.meta.extension",
+      "sliceName" : "packageSource",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/package-source"]
+      }],
+      "mustSupport" : true
+    },
+    {
       "id" : "StructureMap.extension:knowledgeCapability",
       "path" : "StructureMap.extension",
       "sliceName" : "knowledgeCapability",
@@ -212,6 +224,18 @@
       "type" : [{
         "code" : "Extension",
         "profile" : ["http://hl7.org/fhir/StructureDefinition/artifact-relatedArtifact"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "StructureMap.extension:authoritativeSource",
+      "path" : "StructureMap.extension",
+      "sliceName" : "authoritativeSource",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/artifact-authoritativeSource"]
       }],
       "mustSupport" : true
     },

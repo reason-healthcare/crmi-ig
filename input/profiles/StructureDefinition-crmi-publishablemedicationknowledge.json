@@ -64,6 +64,18 @@
       "max" : "1"
     },
     {
+      "id" : "MedicationKnowledge.meta.extension:packageSource",
+      "path" : "MedicationKnowledge.meta.extension",
+      "sliceName" : "packageSource",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/package-source"]
+      }],
+      "mustSupport" : true
+    },
+    {
       "id" : "MedicationKnowledge.extension:knowledgeCapability",
       "path" : "MedicationKnowledge.extension",
       "sliceName" : "knowledgeCapability",
@@ -295,6 +307,18 @@
       "type" : [{
         "code" : "Extension",
         "profile" : ["http://hl7.org/fhir/StructureDefinition/artifact-relatedArtifact"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationKnowledge.extension:authoritativeSource",
+      "path" : "MedicationKnowledge.extension",
+      "sliceName" : "authoritativeSource",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/artifact-authoritativeSource"]
       }],
       "mustSupport" : true
     },

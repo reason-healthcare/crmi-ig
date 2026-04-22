@@ -107,6 +107,18 @@
       "mustSupport" : false
     },
     {
+      "id" : "ConceptMap.extension:webSource",
+      "path" : "ConceptMap.extension",
+      "sliceName" : "webSource",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/web-source"]
+      }],
+      "mustSupport" : true
+    },
+    {
       "id" : "ConceptMap.url",
       "path" : "ConceptMap.url",
       "min" : 1,

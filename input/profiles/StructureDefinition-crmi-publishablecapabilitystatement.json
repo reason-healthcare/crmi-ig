@@ -64,6 +64,18 @@
       "max" : "1"
     },
     {
+      "id" : "CapabilityStatement.meta.extension:packageSource",
+      "path" : "CapabilityStatement.meta.extension",
+      "sliceName" : "packageSource",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/package-source"]
+      }],
+      "mustSupport" : true
+    },
+    {
       "id" : "CapabilityStatement.extension:knowledgeCapability",
       "path" : "CapabilityStatement.extension",
       "sliceName" : "knowledgeCapability",
@@ -259,6 +271,18 @@
         "profile" : ["http://hl7.org/fhir/StructureDefinition/cqf-artifactComment"]
       }],
       "mustSupport" : false
+    },
+    {
+      "id" : "CapabilityStatement.extension:authoritativeSource",
+      "path" : "CapabilityStatement.extension",
+      "sliceName" : "authoritativeSource",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/artifact-authoritativeSource"]
+      }],
+      "mustSupport" : true
     },
     {
       "id" : "CapabilityStatement.date",

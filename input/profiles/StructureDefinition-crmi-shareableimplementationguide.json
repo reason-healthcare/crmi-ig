@@ -107,6 +107,18 @@
       "mustSupport" : false
     },
     {
+      "id" : "ImplementationGuide.extension:webSource",
+      "path" : "ImplementationGuide.extension",
+      "sliceName" : "webSource",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/web-source"]
+      }],
+      "mustSupport" : true
+    },
+    {
       "id" : "ImplementationGuide.url",
       "path" : "ImplementationGuide.url",
       "min" : 1,

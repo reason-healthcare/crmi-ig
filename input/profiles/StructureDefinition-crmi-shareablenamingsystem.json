@@ -136,6 +136,18 @@
       "mustSupport" : false
     },
     {
+      "id" : "NamingSystem.extension:webSource",
+      "path" : "NamingSystem.extension",
+      "sliceName" : "webSource",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/web-source"]
+      }],
+      "mustSupport" : true
+    },
+    {
       "id" : "NamingSystem.extension:title",
       "path" : "NamingSystem.extension",
       "sliceName" : "title",

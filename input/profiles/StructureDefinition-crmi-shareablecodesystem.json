@@ -119,6 +119,18 @@
       "mustSupport" : false
     },
     {
+      "id" : "CodeSystem.extension:webSource",
+      "path" : "CodeSystem.extension",
+      "sliceName" : "webSource",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/web-source"]
+      }],
+      "mustSupport" : true
+    },
+    {
       "id" : "CodeSystem.url",
       "path" : "CodeSystem.url",
       "min" : 1,

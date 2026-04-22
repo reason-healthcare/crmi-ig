@@ -83,18 +83,6 @@
       "fixedCode": "shareable"
     },
     {
-      "id" : "Medication.extension:knowledgeRepresentationLevel",
-      "path" : "Medication.extension",
-      "sliceName" : "knowledgeRepresentationLevel",
-      "min" : 0,
-      "max" : "*",
-      "type" : [{
-        "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/cqf-knowledgeRepresentationLevel"]
-      }],
-      "mustSupport" : true
-    },
-    {
       "id" : "Medication.extension:artifactComment",
       "path" : "Medication.extension",
       "sliceName" : "artifactComment",
@@ -151,6 +139,18 @@
       "type" : [{
         "code" : "Extension",
         "profile" : ["http://hl7.org/fhir/StructureDefinition/artifact-versionPolicy"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.extension:webSource",
+      "path" : "Medication.extension",
+      "sliceName" : "webSource",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/web-source"]
       }],
       "mustSupport" : true
     },

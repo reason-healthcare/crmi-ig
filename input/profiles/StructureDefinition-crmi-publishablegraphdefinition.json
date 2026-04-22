@@ -64,6 +64,18 @@
       "max" : "1"
     },
     {
+      "id" : "GraphDefinition.meta.extension:packageSource",
+      "path" : "GraphDefinition.meta.extension",
+      "sliceName" : "packageSource",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/package-source"]
+      }],
+      "mustSupport" : true
+    },
+    {
       "id" : "GraphDefinition.extension:knowledgeCapability",
       "path" : "GraphDefinition.extension",
       "sliceName" : "knowledgeCapability",
@@ -271,6 +283,18 @@
         "code" : "Extension",
         "profile" : ["http://hl7.org/fhir/StructureDefinition/cqf-publicationStatus"]
       }]
+    },
+    {
+      "id" : "GraphDefinition.extension:authoritativeSource",
+      "path" : "GraphDefinition.extension",
+      "sliceName" : "authoritativeSource",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/artifact-authoritativeSource"]
+      }],
+      "mustSupport" : true
     },
     {
       "id" : "GraphDefinition.date",

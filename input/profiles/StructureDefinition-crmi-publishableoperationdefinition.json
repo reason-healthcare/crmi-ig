@@ -64,6 +64,18 @@
       "max" : "1"
     },
     {
+      "id" : "OperationDefinition.meta.extension:packageSource",
+      "path" : "OperationDefinition.meta.extension",
+      "sliceName" : "packageSource",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/package-source"]
+      }],
+      "mustSupport" : true
+    },
+    {
       "id" : "OperationDefinition.extension:knowledgeCapability",
       "path" : "OperationDefinition.extension",
       "sliceName" : "knowledgeCapability",
@@ -271,6 +283,18 @@
         "profile" : ["http://hl7.org/fhir/StructureDefinition/cqf-artifactComment"]
       }],
       "mustSupport" : false
+    },
+    {
+      "id" : "OperationDefinition.extension:authoritativeSource",
+      "path" : "OperationDefinition.extension",
+      "sliceName" : "authoritativeSource",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/artifact-authoritativeSource"]
+      }],
+      "mustSupport" : true
     },
     {
       "id" : "OperationDefinition.date",

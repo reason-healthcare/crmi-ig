@@ -107,6 +107,18 @@
       "mustSupport" : false
     },
     {
+      "id" : "Library.extension:webSource",
+      "path" : "Library.extension",
+      "sliceName" : "webSource",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/web-source"]
+      }],
+      "mustSupport" : true
+    },
+    {
       "id" : "Library.url",
       "path" : "Library.url",
       "min" : 1,

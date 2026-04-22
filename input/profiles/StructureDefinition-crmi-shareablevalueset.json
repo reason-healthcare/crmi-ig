@@ -119,6 +119,18 @@
       "mustSupport" : true
     },
     {
+      "id" : "ValueSet.extension:webSource",
+      "path" : "ValueSet.extension",
+      "sliceName" : "webSource",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/web-source"]
+      }],
+      "mustSupport" : true
+    },
+    {
       "id" : "ValueSet.url",
       "path" : "ValueSet.url",
       "min" : 1,

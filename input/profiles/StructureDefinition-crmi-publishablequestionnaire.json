@@ -64,6 +64,18 @@
       "max" : "1"
     },
     {
+      "id" : "Questionnaire.meta.extension:packageSource",
+      "path" : "Questionnaire.meta.extension",
+      "sliceName" : "packageSource",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/package-source"]
+      }],
+      "mustSupport" : true
+    },
+    {
       "id" : "Questionnaire.extension:knowledgeCapability",
       "path" : "Questionnaire.extension",
       "sliceName" : "knowledgeCapability",
@@ -211,6 +223,18 @@
         "profile" : ["http://hl7.org/fhir/StructureDefinition/cqf-artifactComment"]
       }],
       "mustSupport" : false
+    },
+    {
+      "id" : "Questionnaire.extension:authoritativeSource",
+      "path" : "Questionnaire.extension",
+      "sliceName" : "authoritativeSource",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/artifact-authoritativeSource"]
+      }],
+      "mustSupport" : true
     },
     {
       "id" : "Questionnaire.identifier",
