@@ -8,7 +8,7 @@ Id: crmi-artifact-operation
 Parent: OperationDefinition
 Title: "CRMI Operation Profile: Artifact Operation"
 Description: """
-Profile for knowledge artifact operations.
+Profile for artifact operations.
 
 This establishes input parameters when the operation is invoked at the resource
 type level. The parameters are used to identify or specify the resource for the

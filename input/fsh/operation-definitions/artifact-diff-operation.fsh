@@ -9,7 +9,7 @@ Usage: #definition
 * type = false
 * instance = false
 * description = """
-Describes the differences between two knowledge artifacts in [FHIR Patch format](https://www.hl7.org/fhir/fhirpatch.html) by recursively resolving dependencies to get a holistic diff.
+Describes the differences between two artifacts in [FHIR Patch format](https://www.hl7.org/fhir/fhirpatch.html) by recursively resolving dependencies to get a holistic diff.
 """
 * comment = """
 The operation is only valid between two resources of the same type and can optionally include expanding all ValueSets in the dependency tree.

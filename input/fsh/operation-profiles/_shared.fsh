@@ -2,7 +2,7 @@ Alias: $fhir-types = http://hl7.org/fhir/resource-types
 
 ValueSet: ArtifactResourceTypes
 Id: artifact-resource-types
-Description: "FHIR canonical plus knowledge artifact resource types."
+Description: "FHIR canonical plus artifact resource types."
 Title: "Artifact Resource Types"
 * ^url = "http://terminology.hl7.org/ValueSet/artifact-resource-types"
 * ^experimental = false

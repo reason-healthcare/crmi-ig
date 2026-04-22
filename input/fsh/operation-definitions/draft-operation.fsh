@@ -6,7 +6,7 @@ Usage: #definition
 * url = "http://hl7.org/fhir/uv/crmi/OperationDefinition/crmi-draft"
 * name = "CRMIDraft"
 * title = "CRMI Draft"
-* description = "Creates a draft version of a knowledge artifact and all its children."
+* description = "Creates a draft version of an artifact and all its children."
 * kind = #operation
 * code = #draft
 * comment = "This operation is used to set the status and version. It also removes effectivePeriod, approvalDate and any extensions which are only valid for active artifacts."

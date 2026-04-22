@@ -3,7 +3,7 @@ InstanceOf: Library
 * status = #active
 * type = http://terminology.hl7.org/CodeSystem/library-type#logic-library
 * description = """
-This example demonstrates how licensing information can be attached to FHIR knowledge artifacts using CRMI extensions. 
+This example demonstrates how licensing information can be attached to FHIR artifacts using CRMI extensions. 
 
 The library shows two properties to artifact licensing:
 1. **License Code**: A standardized code (like 'not-open-source') that provides machine-readable license classification
