@@ -302,6 +302,28 @@ URL, can take the form `{url}` or `{url}|{version}`.
 """
 
 * parameter[+]
+  * name = #excludePackageId
+  * min = 0
+  * max = "*"
+  * use = #in
+  * type = #string
+  * documentation = """
+Whether to exclude dependencies that are in the given package id (note the id may include a version, e.g. `hl7.fhir.uv.crmi#1.0.0`).
+
+In contexts where resources are unpackaged, the package source is determined by:
+1. Looking for a package-source extension on the relatedArtifact entry in the manifest library
+2. Looking for a package-source extension on the resource (either root or Meta)
+3. Looking at whether the url of the artifact starts with the expected canonical of the package based on
+    a. The package.json canonical
+    b. The package-list.json canonical
+    c. The known canonical (for FHIR core packages)
+
+Note that $package will only exclude dependencies whose source package can be determined to match an excludePackageId parameter.
+
+In addition, $package will not exclude resources with unknown or ambiguous provenance.
+"""
+
+* parameter[+]
   * name = #packageOnly
   * min = 0
   * max = "1"
