@@ -83,6 +83,7 @@ Repository support for other types of artifacts **SHALL** follow the same patter
   3. _summary
   4. _total
   5. _elements
+6. For all supported resource types, servers **SHOULD** support the _lastUpdated search parameter, to support content synchronization use cases.
 
 > Note that for servers that support write capabilities, the `version` element of an artifact is a business version, and is independent of [resource versioning](https://hl7.org/fhir/R4/resource.html#versions). Artifact repositories that support write capabilities may wish to implement resource versioning as well as artifact (business) versioning to ensure auditability of changes, however, this is an implementation decision and does not impact the conceptual support for artifact versions (because each different version of an artifact will necessarily be a different resource instance in the server). Note also that R6 has introduced additional capabilities to better support resource versioning for servers that provide such support.
 

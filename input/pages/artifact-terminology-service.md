@@ -155,6 +155,7 @@ Note that when a code system authority has not established a versioning system, 
     7. library: Returning any valueset that is referenced by the given library url (optionally versioned)
     8. artifact: Returning any valueset that directly or indirectly references or is referenced by the given artifact url (optionally versioned)
     9. Servers **SHOULD** support the _text and _content search parameters (as described in the [base specification](http://hl7.org/fhir/R4/search.html#text))
+    10. _lastUpdated: Returning all value sets that have changed since the given date (e.g. https://cts.nlm.nih.gov/fhir/res/ValueSet/?_lastUpdated=ge2026-04-02)
 
 10. **SHALL** Support [ValueSet/$validate-code](http://hl7.org/fhir/R4/valueset-operation-validate-code.html)
     1. **SHALL** support the url parameter
@@ -222,6 +223,7 @@ Note that when a code system authority has not established a versioning system, 
     8. composed-of: Returning any library that includes the given measure canonical or quality program version manifest or release
     9. depends-on: Returning any library that references the given code system or value set canonical
     10. part-of: Returning any version manifest or release that is part of the given library
+    11. _lastUpdated: Returning all version manifests that have changed since the given date (e.g. https://cts.nlm.nih.gov/fhir/res/Library/?_lastUpdated=ge2026-04-02)
 
 4. **SHALL** support specifying expansion rules for the following $expand parameters
     1. **SHALL** support the activeOnly parameter
@@ -299,7 +301,7 @@ Note that when a code system authority has not established a versioning system, 
 6. Servers **SHALL** support language capabilities as specified by the Terminology Ecosystem implementation guide: [Language Support](https://hl7.org/fhir/uv/tx-ecosystem/languages.html).
     1. This requirement does not mandate support for multiple languages, only that the server respond correctly to requests for language support.
 
-7. Servers **SHOULD** support the following _results_ parameters:
+7. Servers **SHOULD** support the following _results_ parameters for all supported resource types:
     1. _sort
     2. _count
     3. _summary
