@@ -39,6 +39,7 @@ Artifact collections can specify _expansion rules_ (i.e. _manifest parameters_) 
 Because this capability results in the potential for parameter values to be supplied in multiple places, the following rules apply:
 
 1. If a parameter is specified as part of the $expand or $validate-code operation directly, it takes precedence
+2. If a parameter is specified as part of the ValueSet definition using the `valueset-expansion-parameter` extension, it takes precedence
 2. If a `default-valueset-version` parameter is specified in the manifest parameters (and no version for the value set is specified in the artifact reference), the version has the same meaning as the `valueSetVersion` parameter to the $expand (in the case that value set is being expanded directly) or as the `default-valueset-version` parameter otherwise
 3. If a `default-system-version` parameter is specified in the manifest parameters (and no version for the code system is specified in the artifact reference), the version has the same meaning as the `system-version` parameter to the $expand
 
@@ -46,7 +47,7 @@ Because this capability results in the potential for parameter values to be supp
 
 For ImplementationGuide, this extension specifies expansion parameters to be used for all ValueSet expansions for ValueSets defined in the IG or referenced by artifacts defined in the IG.
 
-Expansion parameters specified in the IG override expansion parameters specified in dependency IGs, and can be overridden by expansion parameters in downstream IGs.
+When expanding a value set in the context of an implementation guide, only the parameters specified in the implementation guide are used, any parameters specified in dependency IGs are not considered.
 
 When the cqf-expansionParameters extension is used, it is intended to be binding (i.e. expansion SHALL take the expansion parameters into account, according to the expansion rules discussed here.
 
@@ -112,13 +113,13 @@ Note that when a code system authority has not established a versioning system, 
 
 ### Value Sets
 
-1. **SHALL** Represent basic ValueSet information, as specified by the [ShareableValueSet](http://hl7.org/fhir/shareablevalueset.html) profile, which includes url, version, name, status, experimental, publisher, and description.
+1. For predefined content, servers **SHALL** Represent basic ValueSet information, as specified by the [ShareableValueSet](http://hl7.org/fhir/shareablevalueset.html) profile, which includes url, version, name, status, experimental, publisher, and description.
     1. To support the ability to include specific codes that are inactive in their code systems, the following types of include elements **SHALL** be supported
         1. Concepts in a system (unspecified version)
         2. Concepts in a system (specified version)
         3. Value Sets
 
-2. **SHALL** Represent computable ValueSet information, as specified by the [CRMIComputableValueSet](StructureDefinition-crmi-computablevalueset.html) profile, which specifies the definition of a value set using established extensions, or with the `compose` element, including in particular the ability to use the `inactive` element of the `include` to indicate that a specific code is inactive in the code system but should still be included in the expansion.
+2. For predefined content, servers **SHALL** Represent computable ValueSet information, as specified by the [CRMIComputableValueSet](StructureDefinition-crmi-computablevalueset.html) profile, which provides the definition of a value set using either the `valueset-expression` extension, or the `compose` element, including in particular the ability to use the `compose.inactive` element to indicate that inactive codes referenced in the value set definition should still be included in the expansion.
 
 3. For hosted content, the data-absent-reason extension with a value of unknown **MAY** be used to satisfy required cardinality constraints of the Shareable and Publishable value set profiles when an element is not present in the source of truth for the content.
 

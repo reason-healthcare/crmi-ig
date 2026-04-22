@@ -95,9 +95,21 @@
         "key" : "evs-1",
         "severity" : "error",
         "human" : "For contains, a version SHALL be provided unless the parameters element has a \"system-version\" parameter corresponding to the system of the entry and the version matches the system-version parameter.",
-        "expression" : "contains.version.exists() xor  parameter.where(name = 'system-version').exists()"
+        "expression" : "contains.version.exists() xor parameter.where(name = 'system-version').exists()"
       }],
       "mustSupport" : true
+    },
+    {
+      "id": "ValueSet.expansion.extension:unclosed",
+      "path": "ValueSet.expansion.extension",
+      "sliceName" : "unclosed",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/valueset-unclosed"]
+      }],
+      "mustSupport": true
     },
     {
       "id" : "ValueSet.expansion.identifier",
@@ -123,6 +135,18 @@
       "id" : "ValueSet.expansion.parameter",
       "path" : "ValueSet.expansion.parameter",
       "mustSupport" : true
+    },
+    {
+      "id": "ValueSet.expansion.parameter.extension:parameterSource",
+      "path": "ValueSet.expansion.parameter.extension",
+      "sliceName" : "parameterSource",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/valueset-parameterSource"]
+      }],
+      "mustSupport": true
     },
     {
       "id" : "ValueSet.expansion.contains",

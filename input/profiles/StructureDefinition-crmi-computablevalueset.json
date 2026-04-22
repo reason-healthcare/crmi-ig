@@ -124,6 +124,18 @@
       "mustSupport" : true
     },
     {
+      "id": "ValueSet.compose.extension:expansionParameter",
+      "path": "ValueSet.compose.extension",
+      "sliceName" : "expansionParameter",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/valueset-expansion-parameter"]
+      }],
+      "mustSupport": true
+    },
+    {
       "id" : "ValueSet.compose.lockedDate",
       "path" : "ValueSet.compose.lockedDate",
       "mustSupport" : true
