@@ -181,6 +181,16 @@ operation.
 """
 
 * parameter[+]
+  * name = #requestMethod
+  * min = 0
+  * max = "1"
+  * use = #in
+  * type = #code
+  * documentation = """
+Indicates the request method (POST or PUT) that should be used for entries in the resulting package bundle. If not specified, the request method is at the discretion of the server.
+"""
+
+* parameter[+]
   * name = #bundleType
   * min = 0
   * max = "1"
