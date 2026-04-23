@@ -1,8 +1,8 @@
 Invariant: gdf-1
 Description: "Group definition must have either a characteristicExpression or characteristics, but not both"
 Severity: #error
-Expression: "extension('http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-characteristic-expression').exists() xor characteristic.exists()"
-XPath: "exists(f:extension[@url='http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-characteristic-expression']) != exists(f:characteristic)"
+Expression: "extension('http://hl7.org/fhir/StructureDefinition/characteristicExpression').exists() xor characteristic.exists()"
+XPath: "exists(f:extension[@url='http://hl7.org/fhir/StructureDefinition/characteristicExpression']) != exists(f:characteristic)"
 
 Invariant: gdf-2
 Description: "Reference must be to a structure definition"
@@ -19,7 +19,7 @@ Description: "Represents the definition of a group of subjects, suitable for use
 * . ^mustSupport = false
 * extension contains
     $cqf-library named library 0..1 MS and
-    CRMICharacteristicExpression named characteristicExpression 0..1 MS
+    $characteristicExpression named characteristicExpression 0..1 MS
 * identifier MS
 * active MS
 * type only code
