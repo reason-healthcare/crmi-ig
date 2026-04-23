@@ -28,7 +28,7 @@ The authoring phase is supported by the Shareable and Computable profiles define
 
 See [Artifact Conventions](artifact-conventions.html) for artifact authoring conventions.
 
-When creating a specification that references other artifacts, the $data-requirements operation can be used to determine the set of dependencies referenced by the artifact. This set of dependencies can then be used to infer manifest parameters, using [$infer-manifest-parameters](Operation-crmi-infer-manifest-parameters) operation, and then the release process consists only of determining latest version for any unversioned references in the artifact.
+When creating a specification that references other artifacts, the $data-requirements operation can be used to determine the set of dependencies referenced by the artifact. This set of dependencies can then be used to infer manifest parameters, using [$infer-manifest-parameters](OperationDefinition-crmi-infer-manifest-parameters.html) operation, and then the release process consists only of determining latest version for any unversioned references in the artifact.
 
 Note that the release process must still be used to establish the version for any unversioned references in the artifact because it is a transactional operation (i.e. the resulting manifest must contain all the unversioned references in the artifact or any of its dependencies at the time of release).
 
@@ -139,7 +139,7 @@ This IG recommends [Semantic Versioning](https://semver.org) be used to version 
 **Conformance Requirement 3.3 (Artifact Versioning):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-3-3)
 {: #conformance-requirement-3-3}
   1. Artifacts **SHALL** specify a version
-  1. Artifacts **SHOULD** specify a version algorithm
+  2. Artifacts **SHOULD** specify a version algorithm
   1. The artifact version **SHOULD** follow the convention:
        `<major>.<minor>.<patch>[-<label>]`
   1. Artifacts **SHOULD** use _labels_ to support pre-release content or other versioning and build metadata use cases.
@@ -178,6 +178,9 @@ In addition to the use of semantic versioning, this IG adds support for specifyi
 * **metadata** - This policy indicates that non-substantive changes to the metadata elements of an artifact may be made without incrementing the version number.
 * **strict** - This policy indicates that no changes to any elements of an artifact may be made without incrementing the version number.
 * **loose** - This policy indicates that only breaking changes to an artifact require a change to the value of the version element.
+
+> NOTE: The `loose` versioning policy is defined as a registered code but does not have an associated profile in this version of the IG.
+
 * **package** - This policy indicates that the version of the artifact is managed by the package in which the artifact appears. This policy is commonly used for artifacts that are published as part of an implementation guide.
 
 **Conformance Requirement 3.4 (Artifact Versioning Policy):** [<img src="conformance.png" width="20" class="self-link" height="20"/>](#conformance-requirement-3-4)

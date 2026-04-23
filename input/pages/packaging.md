@@ -13,7 +13,7 @@ provides guidance on how to package knowledge artifacts, either independently, o
 
 In general, artifacts such as libraries, measures, and test cases can be packaged as a Bundle
 of type `transaction`. However, since large artifact packages may span multiple bundles, the type
-`collection` **MAY** be used as well. In that case, the bundles **SHOULD** be processed as a unit (i.e. as 
+`collection` **MAY** be used as well. In that case, Receiving systems **SHOULD** process collection bundles as a unit (i.e. as 
 a single transaction). The intent of splitting the bundles is to allow large packages to be processed, 
 but in the case that they are split, transactional considerations are the responsibility of the consumer.
 
@@ -41,7 +41,7 @@ Examples of artifact packages include:
 * A StructureDefinition, together with all the parent and extension StructureDefinitions (but not the ValueSets referenced by bindings)
 * A PlanDefinition, together with the Executable libraries and Expanded ValueSets required to apply the PlanDefinition in a setting without a terminology service
 
-*Note that if an artifact package is large enough to require segmentation in multiple bundles, use of `transaction` bundles may not be feasible.
+> NOTE: If an artifact package is large enough to require segmentation in multiple bundles, use of `transaction` bundles may not be feasible.
 
 NOTE: It is recommended that each resource in the transaction is a [conditional create](https://www.hl7.org/fhir/http.html#ccreate) using the canonical URL and version as search parameters, e.g.:
 

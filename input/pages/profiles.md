@@ -22,7 +22,7 @@ A given artifact may provide all knowledge capabilities (Shareable, Computable, 
 
 The profile categories are expressed as independent profiles to support separation of concerns. For example, a contained ValueSet included in a Questionnaire may not meet the Shareable profile (because it doesn't have a stand-alone life-cycle) but it may still meet Computable expectations.
 
-Profiles along the various axes may have different names appropriate to what capabilities are being provided. For example, ValueSet uses ExpandedValueSet, rather than ExecutableValueSet, to make clear what run-time capability is being provided by the profile.
+Profiles along the various axes may have different names appropriate to what capabilities are being provided. For example, ValueSet uses ExpandedValueSet, rather than ExecutableValueSet, to make clear what run-time capability is being provided by the profile. Similarly, Library uses `CRMIExecutableLibrary` rather than an Expanded variant because libraries contain logic to be executed rather than pre-expanded content.
 
 Note that explicit profiles for capabilities are only defined when there are specific elements of the artifact involved in supporting that capability. For example, there is no executable ActivityDefinition profile, but that doesn't mean that ActivityDefinition artifacts cannot be executable, only that there are no additional conformance expectations for executable ActivityDefinitions specified by this implementation guide.
 
@@ -35,6 +35,9 @@ For knowledge artifacts, a _shareable_ artifact defines the minimum expectations
 |----|----|
 | url | **SHALL** be provided because it provides the globally unique identity for the artifact |
 | webSource | **SHOULD** be used to provide a human-readable web page describing the artifact if it is different than the canonical |
+
+> NOTE: `webSource` is an R5 element. For R4 implementations, use the [`crmi-webSource`](StructureDefinition-crmi-webSource.html) extension.
+
 | version | **SHALL** be provided because it ensures version tracking is possible for the artifact |
 | versionAlgorithm | **SHOULD** be provided if a version algorithm other than semver or date-based is used to ensure systems understand how to interpret the version element of the artifact |
 | name | **SHOULD** be provided to ensure systems can reliably make use of code-generation and other system-level processing for the artifact |
@@ -44,7 +47,7 @@ For knowledge artifacts, a _shareable_ artifact defines the minimum expectations
 | publisher | **SHOULD** be provided to ensure consumers can identify the publisher (i.e. steward) of the artifact |
 | description | **SHALL** be provided to ensure systems can provide a meaningful human-readable description of the artifact |
 | knowledgeCapability | **SHOULD** be provided to allow systems to understand the knowledge capability afforded by the artifact |
-| knowledgeRepresentationLevel | **SHOULD** be provided to allow systems to understand the levels of representation of content provided by the artifact. |
+| knowledgeRepresentationLevel | **SHOULD** be provided to allow systems to understand the levels of representation of content provided by the artifact. (currently unenforceable in profile; see note below) |
 {: .grid }
 
 > NOTE: Because the KnowledgeRepresentationLevel code system is an R5 terminology, there are cross-version publication issues that prevent this aspect of the shareable profiles from being expressed in this version of the publication. A future version of this publication will add representation level back in to the shareable profiles.
@@ -165,7 +168,7 @@ To establish consistency across knowledge operations, the following list of prof
   </tr>
   <tr>
     <td><a href="StructureDefinition-crmi-artifact-version-bindable-operation.html">ArtifactVersionBindableOperation</a></td>
-    <td>Knowlege operations where default artifact version(s) can be specified.</td>
+    <td>Knowledge operations where default artifact version(s) can be specified.</td>
   </tr>
   <tr>
     <td><a href="StructureDefinition-crmi-canonical-version-bindable-operation.html">CanonicalVersionBindableOperation</a></td>

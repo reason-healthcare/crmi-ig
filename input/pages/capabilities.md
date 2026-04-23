@@ -3,7 +3,19 @@
 
 {: #capabilities}
 
-This implementation guide defines capability statements, use cases, and conformance requirements for an artifact terminology service, as well as several levels of support for an artifact repository service. Note that these capabilities could potentially be provided by the same service, but the capability statements are separated in order to facilitate implementation as part of an existing terminology service, or as a separate service as appropriate for the architecture of the implementation environment.
+This implementation guide defines capability statements, use cases, and conformance requirements for an artifact terminology service, as well as several levels of support for an artifact repository service. These capabilities support the full knowledge artifact lifecycle — from authoring and review through publication, distribution, and implementation.
+
+The table below summarizes the four capability categories defined in this guide:
+
+| Capability | Purpose |
+|----|----|
+| [Shareable Repository](artifact-repository-service.html#shareable) | A read-only service providing access to published FHIR knowledge artifacts with basic search and retrieval. |
+| [Publishable Repository](artifact-repository-service.html#publishable) | Extends the Shareable Repository with richer metadata search, packaging (`$package`), and dependency analysis (`$data-requirements`). |
+| [Authoring Repository](artifact-repository-service.html#authoring) | Extends the Publishable Repository with content authoring workflows: draft, review, approve, release, and clone operations for managing in-progress artifacts. |
+| [Artifact Terminology Service](artifact-terminology-service.html) | A terminology service with extended support for versioned value set expansion, version manifest parameters, and artifact collection management. |
+{: .grid}
+
+Note that these capabilities could potentially be provided by the same service, but the capability statements are separated in order to facilitate implementation as part of an existing terminology service, or as a separate service as appropriate for the architecture of the implementation environment.
 
 In addition, the terminology service capability statement is specifically focused on support for terminology-capabilities required for authoring, distribution, and implementation of knowledge artifacts, including version manifest support.
 

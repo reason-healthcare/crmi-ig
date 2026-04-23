@@ -61,7 +61,7 @@ Operations on knowledge artifacts **SHOULD** consider conforming to one or more 
 | Parameterizable (Roadmap)            | Defines parameters passed to logic evaluation (e.g. CQL parameters)         |
 {: .grid }
 
-Note that the `CanonicalVersionBindable` profile is already used in at some published operation definitions (such as ValueSet$expand) but is declared as deprecated because this implementation guide is proposing the more general `ArtifactVersionBindable` to support version-binding behavior for both canonical and non-canonical knowledge artifacts.
+Note that the `CanonicalVersionBindable` profile is already used in at least some published operation definitions (such as ValueSet$expand) but is declared as deprecated because this implementation guide is proposing the more general `ArtifactVersionBindable` to support version-binding behavior for both canonical and non-canonical knowledge artifacts.
 
 [1]: StructureDefinition-crmi-artifact-operation.html
 [2]: StructureDefinition-crmi-canonical-version-bindable-operation.html

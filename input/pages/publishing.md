@@ -31,15 +31,15 @@ See [Packaging](packaging.html) for more.
 
 There are two modes to send content to a repository, depending on how it was packaged.
 
-**If the package is a FHIR Bundle**
+**1. If the package is a FHIR Bundle**
 
 Publishing uses the FHIR REST API where **transaction** bundle(s) are sent to the Knowledge Artifact Repository to a `$publish` operation.
 
 The package bundle:
-* must contain as it's first entry an ImplementationGuide representing the FHIR Package.
+* must contain as its first entry an ImplementationGuide representing the FHIR Package.
 * must have a request method of create, and If-None-Exists condition to avoid overwriting published resources
 
-See: [Pacakge Bundle Profile](StructureDefinition-crmi-publishable-bundle.html) for full conformance requirements.
+See: [Package Bundle Profile](StructureDefinition-crmi-publishable-bundle.html) for full conformance requirements.
 
 The package bundle is then sent to the `$publish` operation on a Knowledge Artifact Server. Here is an example using `curl`:
 

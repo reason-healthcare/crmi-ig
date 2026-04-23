@@ -63,9 +63,9 @@ The following list specifies for each parameter of the ValueSet/$expand operatio
 
 | Parameter | Support | Notes |
 |----|----|----|
-| url | SHALL NOT | |
-| valueSet | SHALL NOT | |
-| valueSetVersion | SHALL NOT | |
+| url | N/A | |
+| valueSet | N/A | |
+| valueSetVersion | N/A | |
 | context | SHOULD NOT | |
 | contextDirection | SHOULD NOT | |
 | filter | SHOULD NOT | |
@@ -80,7 +80,7 @@ The following list specifies for each parameter of the ValueSet/$expand operatio
 | excludeNotForUI | MAY | |
 | excludePostCoordinated | MAY | |
 | displayLanguage | MAY | Overrides whatever language is specified in the context (e.g. in the resource being validated) |
-| defaultDisplayLanugage | MAY | Provides displayLanguage if there's no language specified in the context (e.g. in the resource being validated) |
+| defaultDisplayLanguage | MAY | Provides displayLanguage if there's no language specified in the context (e.g. in the resource being validated) |
 | exclude-system | MAY | |
 | system-version | SHOULD NOT | Deprecated, use default-system-version |
 | default-system-version | SHALL | Use system-version for a CRMI STU1 server |
@@ -111,7 +111,7 @@ For example, given a manifest `http://example.org/Library/manifest-foo` with the
 When performing the following $expand:
 
 ```
-GET [base]/ValueSet/$expand?url=http://example.org/ValueSet/foo?manifest=http://example.org/Library/manifest-foo
+GET [base]/ValueSet/$expand?url=http://example.org/ValueSet/foo&manifest=http://example.org/Library/manifest-foo
 ```
 
 The `default-valueset-version` parameter is used to provide a value for the `valueSetVersion` parameter, identifying the version of the value set to be expanded (1.0.0 in this case).
@@ -122,16 +122,16 @@ The following list specifies for each parameter of the ValueSet/$validate-code o
 
 | Parameter | Support | Notes |
 |----|----|----|
-| url | SHALL NOT | |
+| url | N/A | |
 | context | SHOULD NOT | |
-| valueSet | SHALL NOT | |
-| valueSetVersion | SHALL NOT | |
-| code | SHALL NOT | |
-| system | SHALL NOT | |
-| systemVersion | SHALL NOT | |
-| display | SHALL NOT | |
-| coding | SHALL NOT | |
-| codeableConcept | SHALL NOT | |
+| valueSet | N/A | |
+| valueSetVersion | N/A | |
+| code | N/A | |
+| system | N/A | |
+| systemVersion | N/A | |
+| display | N/A | |
+| coding | N/A | |
+| codeableConcept | N/A | |
 | date | SHALL NOT | There is no need for date-based dependency management with a manifest |
 | abstract | SHOULD NOT | |
 | displayLanguage | MAY | Overrides whatever language is specified in the context (e.g. in the resource being validated) |
@@ -182,6 +182,8 @@ The first approach to implementation involves defining a `manifest` parameter on
 ##### X-Manifest Header
 
 The second approach to implementation involves specifying an `X-Manifest` header that can be included in any server request and provides a way to specify what version manifest should be used for any artifact evaluation performed as part of fulfilling that request.
+
+Servers **MAY** support the `X-Manifest` request header to allow clients to specify a version manifest for any request.
 
 This approach has several advantages for implementation:
 

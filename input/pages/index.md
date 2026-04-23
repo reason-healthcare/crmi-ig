@@ -41,7 +41,7 @@ The implementation guide defines:
 In particular, this implementation guide enables a consistent approach to developing knowledge artifacts as FHIR resources so that they can be seamlessly integrated with the existing FHIR publishing ecosystem, and can be easily deployed and implemented as part of existing FHIR infrastructures. At the same time, the additional capabilities for packaging and distribution enable use cases that cannot be easily achieved with current FHIR packages, such as:
 
 1. Focused packaging: Retrieving a package for a specific artifact with its dependencies. For example a package for a Questionnaire that includes all and only the resources required to fill out that questionnaire.
-2. Artifact selection: Retrieving a set of artifacts together with their related dependencies, independent of the publication grouping. For example, a measure set may include fifty (50) measures, but a provider system is only reporting on five (5) of those measures.
+2. Artifact selection: Retrieving a set of artifacts together with their related dependencies, independent of the publication grouping. For example, a set of measures is published that includes **fifty (50)** measures, but a provider system is only reporting on **five (5)** of those measures.
 3. Platform-specific packaging: Retrieving a package tailored for the capabilities of a particular implementation environment. For example, a set of guideline recommendations together with pre-expanded value sets.
 
 #### Artifacts
@@ -59,7 +59,7 @@ The following table lists the resource types that are considered _artifacts_, al
 |Evidence-based Medicine (EBM) Artifacts (Roadmap) |Artifacts related to supporting evidence-based medicine | Evidence<br/>EvidenceVariable |
 {: .grid}
 
-> (_profiled_) For entity-related Domain Artifacts (i.e. Organization, Location, Practitioner, Patient, and CareTeam), this implementation guide uses profiling to address references to these types of resources in the artifact space (i.e. when a PlanDefinition references a particular type of CareTeam for example, the canonical reference is to a profile of the CareTeam resource.
+> (_profiled_) For entity-related Domain Artifacts (i.e. Organization, Location, Practitioner, and CareTeam), this implementation guide uses profiling to address references to these types of resources in the artifact space (i.e. when a PlanDefinition references a particular type of CareTeam for example, the canonical reference is to a profile of the CareTeam resource.
 
 ### Audience
 {: #audience}
@@ -77,7 +77,7 @@ page in the menu bar:
 -  **[Conformance](conformance.html)**: Conformance information for the implementation guide
 -  **Artifact Management**
     -  **[Artifact lifecycle](artifact-lifecycle.html)**: Content lifecycle of knowledge artifacts
-    -  **[Artifact Manifest](version-manifest.html)**: Detailed specification for artifact manifests
+    -  **[Version Manifest](version-manifest.html)**: Detailed specification for artifact manifests
     -  **[Artifact Conventions](artifact-conventions.html)**: Best-practices and conventions for canonical resource authoring and management
     -  **[Packaging](packaging.html)**: Packaging considerations for canonical resources and knowledge artifacts 
     -  **[Publishing](publishing.html)**: Publishing considerations for canonical resources and knowledge artifacts 
@@ -124,7 +124,7 @@ Health level seven. Publishing terminology to the FHIR Ecosystem - FHIR Product 
 
 Health Level Seven. FHIR Clinical Guidelines. [Online]. Available from: [http://hl7.org/fhir/uv/cpg](http://hl7.org/fhir/uv/cpg) [Accessed October 2023].
 
-Health Level Sevent. Electronic Case Reporting. [Online]. Available from: [http://hl7.org/fhir/us/ecr](http://hl7.org/fhir/us/ecr) [Accessed October 2023].
+Health Level Seven. Electronic Case Reporting. [Online]. Available from: [http://hl7.org/fhir/us/ecr](http://hl7.org/fhir/us/ecr) [Accessed October 2023].
 
 Health Level Seven. Quality Measure Implementation Guide. [Online]. Available from: [http://hl7.org/fhir/us/cqfmeasures](http://hl7.org/fhir/us/cqfmeasures) [Accessed October 2023].
 

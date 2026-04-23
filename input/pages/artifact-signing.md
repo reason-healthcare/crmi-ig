@@ -178,6 +178,7 @@ let jws = createJWS({
 
 Create a Provenance resource to carry the signature:
 
+
 ```json
 {
   "resourceType": "Provenance",
