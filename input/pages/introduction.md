@@ -12,7 +12,7 @@ This Implementation Guide (IG) is a conformance profile, as described in the [Co
 {% include img.html img="CRMI-Overview.png" %}
 </div>
 
-_Figure 2.4_ Illustrates the management of artifacts as a Canonical Resource Management Infrastructure (CRMI), highlighting the interactions between authoring components, publishing mechanisms such as the Node Package Manager (npm), distribution channels, and downstream systems.
+_Figure 2.1_ Illustrates the management of artifacts as a Canonical Resource Management Infrastructure (CRMI), highlighting the interactions between authoring components, publishing mechanisms such as the Node Package Manager (npm), distribution channels, and downstream systems.
 
 **Roles include:**
 * [Authoring System](#authoring-system): A system enabling artifact development and publishing
@@ -73,7 +73,7 @@ In the FHIR publishing ecosystem, this is typically done using FHIR Implementati
 However, this approach to distribution does not adequately address some common use cases for artifact management, including:
 
 1. Focused packaging: Retrieving a package for a specific artifact with its dependencies. For example a package for a Questionnaire that includes all and only the resources required to fill out that questionnaire.
-2. Artifact selection: Retrieving a set of artifacts together with their related dependencies, independent of the publication grouping. For example, a set of measures is published that includes 50 clinician measures, but a provider system is only reporting 5 of those measures.
+2. Artifact selection: Retrieving a set of artifacts together with their related dependencies, independent of the publication grouping. For example, a set of measures is published that includes **fifty (50)** measures, but a provider system is only reporting on **five (5)** of those measures.
 3. Platform-specific packaging: Retrieving a package tailored for the capabilities of a particular implementation environment. For example, a set of guideline recommendations together with pre-expanded value sets.
 
 This implementation guide provides support for these use cases by describing alternate mechanisms for publishing and distribution. Specifically, the $data-requirements and $package operations support identifying artifact dependencies and packaging artifacts with those dependencies (and only those dependencies), and the Artifact Repository and Artifact Terminology Services describe capabilities for supporting artifact publication and distribution as FHIR APIs.
@@ -104,7 +104,7 @@ The foundational standards on the bottom row of the diagram include the layers o
     * **Clinical** layer – defines clinical information such as observations, medications, procedures, and orders.
     * **Reasoning** layer – provides definitional artifacts like plan and activity definitions, libraries, and measures.
 * [**FHIRPath**](http://hl7.org/fhirpath) is a simple, yet powerful, model-independent expression language that is used extensively throughout FHIR to describe paths to elements on resources, and to define invariants on profiles.
-* [**Clinical Quality Language (CQL)**](http://cql.hl7.org) is a superset of FHIRPath that provides an author-friendly format for the description of clinical logic, as well as a machine-friendly format for processing the logic.
+* [**Clinical Quality Language (CQL)**](http://cql.hl7.org) is a superset of FHIRPath that provides an author-friendly format for the description of clinical logic, as well as a machine-friendly format for processing the logic (specifically, CQL is based on and extends FHIRPath expression syntax; see the [CQL specification](https://cql.hl7.org) for details).
 * [**CDS Hooks**](http://cds-hooks.hl7.org) is an HL7 standard specification for integrating decision support services with clinical systems. It is primarily focused on clinician-facing remote decision support within an EHR.
 * [**SMART-on-FHIR (SMART)**](http://hl7.org/fhir/smart-app-launch.html) is an HL7 standard specification for integrating clinical applications into EMRs using FHIR.
 
@@ -131,7 +131,7 @@ The middle row on the right of the figure shows the Specification Implementation
 
 In the top row of the figure, the Content Implementation Guides are FHIR Implementation Guides. These IGs are not necessarily balloted as HL7 standards; rather, they use the FHIR publication toolchain to support authoring and distribution as depicted in the rest of the diagram. The content is stewarded by separate authorities such as quality agencies, specialty societies, and guideline developers; groups that have their own governance and maintenance policies. The content IGs conform to the specification IGs on the right of row 2, and typically make use of the model IGs on the left of row 2 to define content focused on a particular realm.
 
-* [**HEDIS IG**] Contains Healthcare and Effectiveness Data and Information Set (HEDIS) quality measures expressed using FHIR Reasoning Measure and Library resources and conforming to the Quality Measure IG profiles.
+* **HEDIS IG** Contains Healthcare and Effectiveness Data and Information Set (HEDIS) quality measures expressed using FHIR Reasoning Measure and Library resources and conforming to the Quality Measure IG profiles.
 * [**CDC Opioid Prescribing IG**](http://build.fhir.org/ig/cqframework/opioid-cds-r4) contains decision support content to streamline guideline implementation regarding the use of opioids for chronic pain in clinical settings.
 * [**World Health Organization Antenatal Care (WHO ANC)**](https://build.fhir.org/ig/WorldHealthOrganization/smart-anc/) IG contains decision support content to streamline guideline implementation of the World Health Organization's recommendations on antenatal care for a positive pregnancy experience.
 

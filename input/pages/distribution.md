@@ -83,7 +83,7 @@ It is common for knowledge artifacts to depend on other artifacts, which in turn
 
 #### License Extension
 
-All knowledge artifacts (excluding ImplementationGuide, since there is already a `.license` element, a new extension to be defined) may have a [license extension](StructureDefinition-crmi-license.html) to document the license for the artifact e.g.:
+All knowledge artifacts (excluding ImplementationGuide, which already has a `.license` element) may have a [license extension](StructureDefinition-crmi-license.html) to document the license for the artifact e.g.:
 
 ```jsonc
 {
@@ -118,7 +118,7 @@ NOTE: During package publishing, a CRMI Artifact Repository may add these extens
 
 #### Operation $license-requirements 
 
-Operation [$license-requirements](OperationDefinition-crmi-license-requirements.html) that returns a Parameters resource listing for each resource out:
+Operation [$license-requirements](OperationDefinition-crmi-license-requirements.html) that returns a Parameters resource with one group per dependent resource, containing:
 
 * canonical (reference to the artifact)
 * publisher
@@ -170,7 +170,7 @@ Response:
           "valueCode": "not-open-source"
         },
         {
-          "name": "license-details",
+          "name": "license-detail",
           "valueMarkdown": "ACME License\nYou have to pay for it."
         },
         {
@@ -206,7 +206,6 @@ Each section provides a listing of the paths to each element that should be cons
 Note that the following extensions may be safely ignored for the purposes of dependency tracing:
 
 ```
-StructureDefinition http://hl7.org/fhir/StructureDefinition/elementdefinition-type-must-support
 StructureDefinition http://hl7.org/fhir/StructureDefinition/elementdefinition-type-must-support
 StructureDefinition http://hl7.org/fhir/StructureDefinition/codesystem-properties-mode
 ```
@@ -409,6 +408,8 @@ regulatory[].regulatoryAuthority
 Canonical references **MAY** be authored without a version. To ensure consistent versions of resources are used by downstream systems, a manifest parameter to specify canonical versions **MAY** be passed to FHIR operations that use dynamic requirements: `$package` and `$data-requirements`; in addition to execution operations that can use a content endpoint to resolve canonical resources such as `$apply` from CPG and `$evaluate-measure` from DEQM IG.
 
 More information on [manifest specification](version-manifest.html)
+
+> NOTE: For parameter precedence rules when manifest parameters conflict with operation parameters, see [Artifact Terminology Service](artifact-terminology-service.html#parameters).
 
 ### Syndication
 {: #distribution-syndication}

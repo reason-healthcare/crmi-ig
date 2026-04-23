@@ -29,7 +29,7 @@ Artifact collections can specify _expansion rules_ (i.e. _manifest parameters_) 
 
 1. `activeOnly`
 2. `default-system-version` (may still be seen as `system-version` for backwards-compatibility)
-3. `default-valueset-vesrion`
+3. `default-valueset-version`
 4. `check-system-version`
 5. `check-valueset-version`
 6. `force-system-version`
@@ -43,9 +43,9 @@ Artifact collections can specify _expansion rules_ (i.e. _manifest parameters_) 
 Because this capability results in the potential for parameter values to be supplied in multiple places, the following rules apply:
 
 1. If a parameter is specified as part of the $expand or $validate-code operation directly, it takes precedence
-2. If a parameter is specified as part of the ValueSet definition using the `valueset-expansion-parameter` extension, it takes precedence
-2. If a `default-valueset-version` parameter is specified in the manifest parameters (and no version for the value set is specified in the artifact reference), the version has the same meaning as the `valueSetVersion` parameter to the $expand (in the case that value set is being expanded directly) or as the `default-valueset-version` parameter otherwise
-3. If a `default-system-version` parameter is specified in the manifest parameters (and no version for the code system is specified in the artifact reference), the version has the same meaning as the `system-version` parameter to the $expand
+2. If a parameter is specified as part of the ValueSet definition using the `valueset-expansion-parameter` extension, it takes precedence (see the [valueset-expansion-parameter](https://hl7.org/fhir/extensions/StructureDefinition-valueset-expansion-parameter.html) extension)
+3. If a `default-valueset-version` parameter is specified in the manifest parameters (and no version for the value set is specified in the artifact reference), the version has the same meaning as the `valueSetVersion` parameter to the $expand (in the case that value set is being expanded directly) or as the `default-valueset-version` parameter otherwise
+4. If a `default-system-version` parameter is specified in the manifest parameters (and no version for the code system is specified in the artifact reference), the version has the same meaning as the `system-version` parameter to the $expand
 
 > NOTE: The term _artifact collection_ can also be understood as a content Implementation Guide, in which case the ImplementationGuide resource serves as the container for the collection of artifacts; all the same discussions and use cases apply, in particular the ability to use the cqf-expansionParameters extension as described here. The [CRMIImplementationGuide](StructureDefinition-crmi-implementationguide.html) profile supports this use case.
 
@@ -55,7 +55,7 @@ When expanding a value set in the context of an implementation guide, only the p
 
 When the cqf-expansionParameters extension is used, it is intended to be binding (i.e. expansion SHALL take the expansion parameters into account, according to the expansion rules discussed here.
 
-> NOTE: The previous version of this implementation guide used an "expansion" parameter to allow clients to request persisted expansions using the expansion identifier (one such system is VSAC). However, the "manifest" capability provided through FHIR terminology services replaces the need for the use of the expansion parameter. Some servers may use the manifest identifier as an expansion identifier to facilitate access to and use of persisted expansions.
+> NOTE: The previous version of this implementation guide used an "expansion" parameter to allow clients to request persisted expansions using the expansion identifier (one such system is VSAC (Value Set Authority Center)). However, the "manifest" capability provided through FHIR terminology services replaces the need for the use of the expansion parameter. Some servers may use the manifest identifier as an expansion identifier to facilitate access to and use of persisted expansions.
 
 #### Hosted Content
 
@@ -178,7 +178,7 @@ Note that when a code system authority has not established a versioning system, 
         2. **SHOULD** support lenient-display-validation
         3. **SHOULD** support inferSystem
 
-11. Support [ValueSet/$expand](http://hl7.org/fhir/R4/valueset-operation-expand.html)
+11. **SHALL** Support [ValueSet/$expand](http://hl7.org/fhir/R4/valueset-operation-expand.html)
     1. **SHALL** support the url parameter
     2. **SHALL** support the valueSetVersion parameter
     3. **SHALL** support the activeOnly parameter
@@ -196,8 +196,8 @@ Note that when a code system authority has not established a versioning system, 
     14. **SHOULD** support the manifestParameters parameter (defined in [CRMIValueSetExpand](OperationDefinition-crmi-valueset-expand.html))
     15. **SHOULD** support the includeUnreleasedContent parameter (defined in [CRMIValueSetExpand](OperationDefinition-crmi-valueset-expand.html))
     16. **SHOULD** support the includeLastVersionActive parameter (defined in [CRMIValueSetExpand](OperationDefinition-crmi-valueset-expand.html))
-    16. **SHOULD** support the includeNoLongerPresent parameter (defined in [CRMIValueSetExpand](OperationDefinition-crmi-valueset-expand.html))
-    17. To align with the FHIR Terminology Ecosystem requirements, servers
+    17. **SHOULD** support the includeNoLongerPresent parameter (defined in [CRMIValueSetExpand](OperationDefinition-crmi-valueset-expand.html))
+    18. To align with the FHIR Terminology Ecosystem requirements, servers
         17. **SHOULD** support the tx-resource and cache-id parameters to improve performance
         18. **SHOULD** support includeDefinition
         19. **SHOULD** support property
@@ -236,8 +236,8 @@ Note that when a code system authority has not established a versioning system, 
     7. **SHALL** support the force-valueset-version parameter
     8. **SHOULD** support the `includeUnreleasedContent` parameter (defined in [CRMIValueSetExpand](OperationDefinition-crmi-valueset-expand.html))
     9. **SHOULD** support the `includeLastVersionActive` parameter (defined in [CRMIValueSetExpand](OperationDefinition-crmi-valueset-expand.html))
-    9. **SHOULD** support the `includeNoLongerPresent` parameter (defined in [CRMIValueSetExpand](OperationDefinition-crmi-valueset-expand.html))
-    9. **SHOULD** support other parameters
+    10. **SHOULD** support the `includeNoLongerPresent` parameter (defined in [CRMIValueSetExpand](OperationDefinition-crmi-valueset-expand.html))
+    11. **SHOULD** support other parameters
 
 5. Because this capability results in the potential for parameter values to be supplied in multiple places, the following rules apply:
     1. If a parameter is specified as part of the $expand or $validate-code operation directly, it takes precedence
@@ -255,9 +255,9 @@ Note that when a code system authority has not established a versioning system, 
     8. **SHOULD** support default-system-version parameter (formerly system-version) (overrides code system versions specified in the manifest)
     9. **SHOULD** support check-system-version parameter (overrides code system versions specified in the manifest)
     10. **SHOULD** support force-system-version parameter (overrides code system versions specified in the manifest)
-    8. **SHOULD** support default-valueset-version parameter (overrides value set versions specified in the manifest)
-    9. **SHOULD** support check-valueset-version parameter (overrides value set versions specified in the manifest)
-    10. **SHOULD** support force-valueset-version parameter (overrides value set versions specified in the manifest)
+    11. **SHOULD** support default-valueset-version parameter (overrides value set versions specified in the manifest)
+    12. **SHOULD** support check-valueset-version parameter (overrides value set versions specified in the manifest)
+    13. **SHOULD** support force-valueset-version parameter (overrides value set versions specified in the manifest)
 
 7. **SHALL** support version manifest and value set release: [Library/$release](OperationDefinition-crmi-release.html) operation
     1. **SHALL** support the id parameter
@@ -439,6 +439,8 @@ though it was explicitly included in the value set definition.
 
 ##### Version-specific expand
 
+> NOTE: The `system-version` parameter is deprecated. Use `default-system-version` instead. The examples below use `system-version` for backwards compatibility only.
+
 Given the following `$expand`:
 
 ```
@@ -507,6 +509,8 @@ This example illustrates the use of a draft quality program description to speci
 
 > NOTE: This parameter was called includeDraft in previous versions of this specification
 
+> NOTE: The `system-version` parameter is deprecated. Use `default-system-version` instead. The examples below use `system-version` for backwards compatibility only.
+
 ```
 "contained": [
   {
@@ -557,6 +561,8 @@ Note that the version of SNOMED in use is still listed as a dependency in the ar
 The following example illustrates a collection that is an _active_ instance of an artifact collection release used to provide stable extensions for the released artifacts in the collection.
 
 Specifically, the collection includes a manifest parameters that specifies pinned versions of unversioned references used in the artifact collection, as well as expansion parameters to be used when expanding value sets used in the artifact collection:
+
+> NOTE: The `system-version` parameter is deprecated. Use `default-system-version` instead. The examples below use `system-version` for backwards compatibility only.
 
 ```json
 ...
@@ -612,6 +618,8 @@ Given this use of an artifact collection, the _manifest_ parameter can be used i
 
 This is effectively an alternative mechanism for expressing the same value set and code system version specific expansion above, and results in the same expansion, with the additional `manifest` parameter:
 
+> NOTE: The `system-version` parameter is deprecated. Use `default-system-version` instead. The examples below use `system-version` for backwards compatibility only.
+
 ```
 "expansion": {
   "timestamp": "2021-02-05T08:57:00-06:00",
@@ -657,6 +665,8 @@ Similarly, when using a release for the manifest parameter:
 ```
 
 This is effectively the same as providing the relevant `system-version` parameters to the value set expand, and results in the expansion with the appropriate code system versions:
+
+> NOTE: The `system-version` parameter is deprecated. Use `default-system-version` instead. The examples below use `system-version` for backwards compatibility only.
 
 ```
 "expansion": {

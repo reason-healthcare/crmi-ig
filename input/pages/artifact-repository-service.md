@@ -117,7 +117,7 @@ The PublishableArtifactRepository capability statement builds on the ShareableAr
 * Package artifacts using the $package operation
 * Requirements using the $data-requirements operation
 * Search using additional publishable metadata
-* Should support minimum write capability for released content (Publish, Retire, Remove)
+* **SHOULD** support minimum write capability for released content (Publish, Retire, Remove)
 
 The [CRMIPublishableArtifactRepository](CapabilityStatement-crmi-publishable-artifact-repository.html) capability statement captures these requirements formally, while the following sections provide a narrative description of them.
 
@@ -210,7 +210,7 @@ Repository support for other types of artifacts **SHALL** follow the same patter
 
 #### Artifacts
 
-For each type of artifact supported, an AuthoringMeasureRepository:
+For each type of artifact supported, an AuthoringArtifactRepository:
 
 1. **SHALL** support _submit_ using either the `create` or `update` interaction
     1. The artifact **SHALL** conform to at least the appropriate shareable profile
@@ -218,7 +218,7 @@ For each type of artifact supported, an AuthoringMeasureRepository:
     2. The artifact **SHALL** conform to at least the appropriate shareable profile
 3. **SHOULD** support _withdraw_ using the `delete` interaction, to withdraw an artifact and all its children
     2. The artifact **SHALL** be unreleased
-    2. The server **SHOULD** responsd with a trasaction-response bundle which contains the contents of all deleted resources
+    2. The server **SHOULD** respond with a transaction-response bundle which contains the contents of all deleted resources
 4. **SHOULD** support _review_ using the [$review](OperationDefinition-crmi-review.html) operation
     1. **SHOULD** support id parameter
     1. **SHOULD** support reviewDate parameter
@@ -234,12 +234,12 @@ For each type of artifact supported, an AuthoringMeasureRepository:
     3. **SHOULD** support artifactAssessmentSummary parameter
     4. **SHOULD** support artifactAssessmentTarget parameter
     5. **SHOULD** support artifactAssessmentAuthor parameter
-    6. **SHOULD** respond with a trasaction-response bundle which contains the contents of all updated resources
+    6. **SHOULD** respond with a transaction-response bundle which contains the contents of all updated resources
 6. **SHALL** support _draft_ using the [$draft](OperationDefinition-crmi-draft.html) operation
     2. **SHOULD** support id parameter
     4. **SHOULD** support version parameter
     4. **SHOULD** respond with a transaction-response bundle which contains the contents of all created resources
-6. **SHALL** support _release_ using the [$release](OperationDefinition-crmi-release.html) operation
+7. **SHALL** support _release_ using the [$release](OperationDefinition-crmi-release.html) operation
     1. **SHOULD** support id parameter
     4. **SHOULD** support version parameter
     5. **SHOULD** support versionBehavior parameter
@@ -247,11 +247,11 @@ For each type of artifact supported, an AuthoringMeasureRepository:
     7. **SHOULD** support experimentalBehavior parameter
     8. **SHOULD** support releaseLabel parameter
     9. **SHOULD** respond with a transaction-response bundle which contains the contents of all updated resources
-11. **SHOULD** support _clone_ using the [$clone](OperationDefinition-crmi-clone.html) operation
+8. **SHOULD** support _clone_ using the [$clone](OperationDefinition-crmi-clone.html) operation
     2. **SHOULD** support id parameter
     4. **SHOULD** support version parameter
     5. **SHOULD** respond with a transaction-response bundle which contains the contents of all created resources
-12. **SHOULD** support _diff_ using the [$artifact-diff](OperationDefinition-crmi-artifact-diff.html) operation
+9. **SHOULD** support _diff_ using the [$artifact-diff](OperationDefinition-crmi-artifact-diff.html) operation
     1. **SHALL** support target parameter
     2. **SHALL** support source parameter
     3. **SHOULD** support compareComputable parameter

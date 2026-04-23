@@ -54,7 +54,7 @@ The `title` element of an artifact **SHOULD**:
 
 ### Operation definitions
 
-Although FHIR operation definitions can specify a `code` property, servers may use whatever code they surface in their capability statement to implement operations. To simplify application development and encourage consistency, this implementation guide proposes that:
+Although FHIR operation definitions can specify a `code` property, Servers SHOULD use the `code` property of the OperationDefinition to expose operation capability in their CapabilityStatement, though some servers may choose to use a different code for implementation reasons. To simplify application development and encourage consistency, this implementation guide proposes that:
 
 1. Servers **SHOULD** use the `code` property of the OperationDefinition to expose operation capability
 2. Operation definitions **SHOULD** use the same `code` property as the base definition of an OperationDefinition they are extending
